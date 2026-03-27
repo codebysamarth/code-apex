@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Notion Workspace Palette */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f7f7f5;
+  --bg-sidebar: #fbfbfa;
+  --text-primary: rgba(55, 53, 47, 1);
+  --text-secondary: rgba(55, 53, 47, 0.65);
+  --text-muted: rgba(55, 53, 47, 0.45);
+  --border: rgba(55, 53, 47, 0.09);
+  --border-strong: rgba(55, 53, 47, 0.16);
+  --accent: #2383e2;
+
+  /* Notion Multi-Select Badge Colors */
+  --green-bg: #dbeddb;
+  --green-text: #1c7636;
+  --yellow-bg: #fdecc8;
+  --yellow-text: #685519;
+  --red-bg: #ffe2dd;
+  --red-text: #af2b21;
+  --blue-bg: #d3e5ef;
+  --blue-text: #30789b;
+  --purple-bg: #e8deee;
+  --purple-text: #6940a5;
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+    overflow: hidden;
+  }
+  ::selection {
+    background: rgba(35, 131, 226, 0.15);
+  }
+}
+
+/* Notion scrollbar */
+.scrollbar-notion::-webkit-scrollbar { width: 6px; height: 6px; }
+.scrollbar-notion::-webkit-scrollbar-thumb { background: rgba(55,53,47,0.16); border-radius: 10px; }
+.scrollbar-notion::-webkit-scrollbar-thumb:hover { background: rgba(55,53,47,0.3); }
+.scrollbar-notion::-webkit-scrollbar-track { background: transparent; }
+
+.scrollbar-minimal::-webkit-scrollbar { width: 6px; }
+.scrollbar-minimal::-webkit-scrollbar-thumb { background: rgba(55,53,47,0.12); border-radius: 10px; }
+.scrollbar-minimal::-webkit-scrollbar-track { background: transparent; }

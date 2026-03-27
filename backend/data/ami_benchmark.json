@@ -1,0 +1,49 @@
+{
+  "functional_requirements": {
+    "count": 50,
+    "examples": [
+      "System must authenticate users via SSO",
+      "System shall process transactions in real-time",
+      "Application must support multi-language interface"
+    ]
+  },
+  "non_functional_requirements": {
+    "performance": 15,
+    "security": 12,
+    "scalability": 8,
+    "reliability": 10,
+    "usability": 5
+  },
+  "stakeholders": {
+    "count": 20,
+    "roles": [
+      "Product Manager",
+      "Technical Lead",
+      "Business Analyst",
+      "Developer",
+      "QA Engineer"
+    ]
+  },
+  "decisions": {
+    "count": 25,
+    "categories": [
+      "architecture",
+      "technology",
+      "process",
+      "scope"
+    ]
+  },
+  "timeline": {
+    "typical_milestones": [
+      "POC",
+      "Alpha",
+      "Beta",
+      "UAT",
+      "Production"
+    ],
+    "average_project_duration_months": 6
+  },
+  "total_requirements": 100,
+  "benchmark_version": "1.0",
+  "source": "AMI Meeting Corpus + Industry Standards"
+}

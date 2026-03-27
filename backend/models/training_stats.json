@@ -1,0 +1,56 @@
+{
+  "version": "2.0",
+  "total_enron_sentences": 4000292,
+  "total_ami_sentences": 36514,
+  "training_set_size": 10400,
+  "test_set_size": 2600,
+  "best_params": {
+    "clf__C": 2.0,
+    "tfidf__max_features": 20000,
+    "tfidf__ngram_range": [
+      1,
+      3
+    ]
+  },
+  "label_classes": [
+    "decision",
+    "functional_req",
+    "nfr",
+    "noise",
+    "stakeholder",
+    "timeline"
+  ],
+  "per_class_metrics": {
+    "decision": {
+      "precision": 0.97,
+      "recall": 0.968,
+      "f1": 0.969
+    },
+    "functional_req": {
+      "precision": 0.904,
+      "recall": 0.968,
+      "f1": 0.935
+    },
+    "nfr": {
+      "precision": 0.983,
+      "recall": 1.0,
+      "f1": 0.991
+    },
+    "noise": {
+      "precision": 0.911,
+      "recall": 0.763,
+      "f1": 0.83
+    },
+    "stakeholder": {
+      "precision": 0.938,
+      "recall": 0.953,
+      "f1": 0.945
+    },
+    "timeline": {
+      "precision": 0.792,
+      "recall": 0.905,
+      "f1": 0.845
+    }
+  },
+  "overall_f1": 0.919
+}
