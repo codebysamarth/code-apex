@@ -1,0 +1,75 @@
+# Code Apex: AI-Powered BRD Extraction Dashboard 🚀
+
+Code Apex is a production-grade Requirements Engineering platform that transforms unstructured corporate communications (emails, meeting transcripts, documents) into structured **Business Requirement Documents (BRD)** using a multi-agent AI pipeline.
+
+![Architecture Diagram](./architecture_diagram.png)
+
+## 🏗️ Project Architecture
+
+Code Apex operates on a **LangGraph-driven Multi-Agent Pipeline**. Unlike traditional linear processing, each specialized agent autonomously processes a different part of the requirement lifecycle:
+
+1.  **Ingestion Agent**: Collects and pre-processes raw text or uploaded documents (PDF, DOCX, VTT).
+2.  **Classifier Agent**: Uses a trained **NLP Model** to distinguish between functional requirements, non-functional requirements, stakeholders, and "noise."
+3.  **RAG Agent**: Queries a 200,000+ vector knowledge base (Enron/AMI corpus) for domain context.
+4.  **Specialized Domain Agents**: Routes the data to persona-specific extractors for **Software, Healthcare, Mechanical, or Business** domains.
+5.  **AI Suggestion Agent (FAISS)**: Uses **Vector Similarity Search (FAISS)** to compare your current draft against 20+ historical projects. It "predicts" and suggests requirements that might be missing based on similar past work.
+6.  **Ingest Learner Agent**: Automatically indexes every finalized BRD back into the FAISS store, allowing the system to learn and improve with every session.
+7.  **Render Agent**: Normalizes the final state for real-time streaming to the dashboard.
+
+### Tech Stack:
+- **Frontend**: Next.js 14 (App Router), TailwindCSS, Framer Motion, Lucide icons.
+- **Backend**: FastAPI, LangGraph, FAISS, SentenceTransformers (all-MiniLM-L6-v2).
+- **Models**: Google Gemini 1.5 (with multi-key fallback rotation).
+
+## 🚀 Getting Started
+
+### Prerequisites:
+- Python 3.10+
+- Node.js 18+
+- Google Gemini API Key(s)
+
+### 1. Backend Setup
+```bash
+cd backend
+python -m venv venv
+# Windows:
+.\venv\Scripts\activate
+# Linux/macOS:
+source venv/bin/activate
+
+pip install -r requirements.txt
+```
+
+Create a `.env` file in `backend/`:
+```env
+# Multi-API Key Support (will fallback if one fails)
+GOOGLE_API_KEY_1=your_api_key_here
+GOOGLE_API_KEY_2=your_second_key_here
+```
+
+Run the backend:
+```bash
+uvicorn main:app --port 8000 --reload
+```
+
+### 2. Frontend Setup
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+## 🌍 Deployment & Scalability
+
+### **Should you deploy it?** 
+**Yes.** Code Apex is fully modular and follows container-friendly principles.
+
+### **Will it work completely?**
+**Absolutely.** Here is how to ensure a smooth production deployment:
+1.  **Backend Deployment**: Use platforms like **Railway, Render, or Fly.io**. Ensure you use a **persistent volume** for the `backend/faiss_store/` directory if you want the "Learning" feature to persist across redeployments.
+2.  **Frontend Deployment**: The frontend is a standard Next.js application ready for **Vercel** or **Netlify**.
+3.  **Vector Store**: While the local FAISS store works perfectly for current data, for massive scaling (millions of projects), you can easily plug in a managed vector service like Pinecone.
+4.  **AI Reliability**: The implemented **Multi-API Fallback** (configured in your `.env`) ensures the system remains "up" even if a single API key hits its throughput limit during a high-traffic demo.
+
+---
+*Built for the AI Innovation Challenge / Competition*
