@@ -8,18 +8,77 @@ export const initialPipeline: PipelineStep[] = [
   { id: 'timeline', label: 'Timeline Creation', status: 'idle' },
   { id: 'critique', label: 'Critique & Refine', status: 'idle' },
   { id: 'score', label: 'Priority Scoring', status: 'idle' },
+  { id: 'render', label: 'Generate BRD', status: 'idle' },
 ];
 
-export const sampleText = `Project Zenith - Global Payments Dashboard
-Overview:
-Replace legacy dashboard to support 10k transactions per second.
+export const domainPipelines: Record<string, PipelineStep[]> = {
+  software: initialPipeline,
+  healthcare: [
+    { id: 'ingest', label: 'Ingest HIPAA Docs', status: 'idle' },
+    { id: 'classify', label: 'Clinical Classifier', status: 'idle' },
+    { id: 'rag', label: 'Medical RAG', status: 'idle' },
+    { id: 'domain_extractor', label: 'Clinical Expert Agent', status: 'idle' },
+    { id: 'timeline', label: 'Healthcare Timeline', status: 'idle' },
+    { id: 'critique', label: 'Compliance Audit', status: 'idle' },
+    { id: 'score', label: 'Requirement Scoring', status: 'idle' },
+    { id: 'render', label: 'Finalize Clinical BRD', status: 'idle' },
+  ],
+  mechanical: [
+    { id: 'ingest', label: 'Ingest CAD/Spec', status: 'idle' },
+    { id: 'classify', label: 'Hardware Classifier', status: 'idle' },
+    { id: 'rag', label: 'Engineering RAG', status: 'idle' },
+    { id: 'domain_extractor', label: 'Hardware Design Agent', status: 'idle' },
+    { id: 'timeline', label: 'Design Milestones', status: 'idle' },
+    { id: 'critique', label: 'Safety Critique', status: 'idle' },
+    { id: 'score', label: 'Engineering Scoring', status: 'idle' },
+    { id: 'render', label: 'Generate Engineering BRD', status: 'idle' },
+  ],
+  business: [
+    { id: 'ingest', label: 'Ingest Strategy', status: 'idle' },
+    { id: 'classify', label: 'Market Classifier', status: 'idle' },
+    { id: 'rag', label: 'Strategy RAG', status: 'idle' },
+    { id: 'domain_extractor', label: 'Strategy Consultant Agent', status: 'idle' },
+    { id: 'timeline', label: 'Strategic Roadmap', status: 'idle' },
+    { id: 'critique', label: 'GAP Analysis', status: 'idle' },
+    { id: 'score', label: 'Business Value Scoring', status: 'idle' },
+    { id: 'render', label: 'Finalize Business Case', status: 'idle' },
+  ],
+};
+
+export const domainSamples: Record<string, string> = {
+  software: `Project Zenith - Global Payments Dashboard
+Overview: Replace legacy dashboard to support 10k TPS.
 Functional Requirements:
 FR1: Monitor transactions in real time.
-FR2: Calculate mid-market exchange rates for 40+ currencies.
-Stakeholders:
-Manager Sarah (Product), Developer John (Engineering), Finance Admin Mike (Accounting).
-Constraints:
-Maintain 99.9% uptime. Ensure sub-second dashboard loads. Encrypt data at rest.`;
+FR2: Calculate FX rates for 40+ currencies.
+Constraints: 99.9% uptime. Sub-second load times.`,
+
+  healthcare: `Clinical Patient Portal - St. Jude Medical
+Objective: Secure platform for patient-clinician EHR access.
+Requirements:
+- HIPAA Compliance: All data must be encrypted with AES-256.
+- Integration: Support HL7 FHIR for EHR interoperability.
+- Safety: Patient drug-allergy alerts must trigger in <200ms.
+Stakeholders: Clinical Staff, IT Security, Hospital Admin.`,
+
+  mechanical: `HVAC Compressor Housing - Rev 4.0
+Specs: Aluminum Alloy 6061 casing for industrial refrigeration.
+Engineering Requirements:
+- Material: High-grade aerospace grade Aluminum (6061-T6).
+- Tolerance: Precision milling to +/- 0.05mm on all mount points.
+- Pressure: Must withstand 450 PSI internal pressure at 80°C.
+- Safety: Factor of safety must be >= 2.5.`,
+
+  business: `GTM Strategy: European Expansion Plan
+Goal: Gain 15% market share in the EU fintech space by 2025.
+Strategic Levers:
+- Market entry via Berlin and Paris hubs.
+- Compliance: Full MiFID II and GDPR alignment.
+- Financials: Target ROI of 22% within 18 months.
+- Risk: Euro-volatility mitigation using hedge strategies.`
+};
+
+export const sampleText = domainSamples.software;
 
 export const sampleBRDSlow: Partial<BRDState> = {
   functional: [

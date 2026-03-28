@@ -1,0 +1,192 @@
+[
+  {
+    "id": "biz_001",
+    "domain": "business",
+    "project_name": "CRM Implementation",
+    "industry": "Sales & Marketing",
+    "requirements": [
+      "The CRM must unify customer data from three existing legacy systems.",
+      "Sales representatives must be able to track deal flow and pipeline.",
+      "Real-time dashboards for sales performance shall include revenue forecasting.",
+      "The system must automate lead assignment based on territory and product.",
+      "Integration with corporate email (Outlook) and calendar is required.",
+      "Customer 360 view shall include previous purchases and support tickets.",
+      "Mobile access for field sales must support offline data entry.",
+      "Automated marketing campaigns must allow personalized lead nurturing.",
+      "ROI target of 15% increase in conversion rates over 12 months.",
+      "Customer support case management must include SLA tracking.",
+      "Self-service portal shall allow customers to update their own contact info.",
+      "System must support multi-currency and multi-language for global sales."
+    ],
+    "nfrs": [
+      "Privacy compliance with GDPR and CCPA is a non-negotiable requirement.",
+      "The system must handle 500 concurrent users without performance lag.",
+      "Data availability must be 99.9% with geographically distributed servers.",
+      "Transition from legacy to CRM must be completed within 6 months."
+    ],
+    "domain_sections": {
+      "Market Entry Strategy": [{"text": "Pilot launch in European market (GDPR focus)"}, {"text": "Expansion to APAC following success"}],
+      "Business Objectives & KPIs": [{"text": "Targeting 20% increase in lead velocity"}, {"text": "Lower customer churn rate by 5%"}],
+      "ROI & Financial Projections": [{"text": "Initial investment of $500k"}, {"text": "Projected ROI within 18 months"}],
+      "Strategic Risk & Mitigation": [{"text": "Data migration risk management"}, {"text": "Executive sponsorship from VP of Sales"}],
+      "Market Drivers & Competition": [{"text": "Replacing fragmented Excel-based tracking"}, {"text": "Better competitive intelligence gathering"}],
+      "Operational Requirements": [{"text": "Cloud-based SaaS deployment model"}, {"text": "Dedicated customer success manager"}],
+      "Regulatory & Compliance": [{"text": "GDPR compliance for European data"}, {"text": "SOC2 security certification for vendor"}],
+      "Strategic Roadmap": [{"text": "Legacy data cleanup phase"}, {"text": "Core module rollout by Q2"}]
+    },
+    "compliance": ["GDPR", "CCPA", "SOX"],
+    "tags": ["crm", "sales", "enterprise", "roi"]
+  },
+  {
+    "id": "biz_002",
+    "domain": "business",
+    "project_name": "ERP Rollout",
+    "industry": "Manufacturing",
+    "requirements": [
+      "The ERP system must integrate finance, procurement, and inventory.",
+      "Automatic journal entry creation for every AP/AR transaction.",
+      "Production planning module must consider machine and labor capacity.",
+      "Inventory levels across all 5 warehouses must stay synced in real-time.",
+      "The procurement module shall automate RFQ and PO processing.",
+      "Financial consolidation for three subsidiaries must be automated.",
+      "The system shall facilitate SOX compliance for audit tracking.",
+      "Cost accounting must support standard, average, and FIFO methods.",
+      "Strategic vendor management module shall track performance and quality.",
+      "The system must support payroll processing for 2,000 employees.",
+      "Real-time cash flow statements must be available for leadership.",
+      "E-invoicing with government portals must be supported (compliance)."
+    ],
+    "nfrs": [
+      "System must support 1,000 concurrent internal users in manufacturing.",
+      "Disaster recovery must ensure zero data loss during failed failover.",
+      "Initial implementation timeline must not exceed 18 months.",
+      "The user interface must be localized into French, Spanish, and German."
+    ],
+    "domain_sections": {
+      "Market Entry Strategy": [{"text": "Consolidation of internal manufacturing siloes"}, {"text": "Global ERP standard for all M&A targets"}],
+      "Business Objectives & KPIs": [{"text": "Reduce monthly close time from 10 to 4 days"}, {"text": "Inventory carrying cost reduction of 10%"}],
+      "ROI & Financial Projections": [{"text": "$5M CAPEX for global rollout"}, {"text": "Annual operational savings of $1M"}],
+      "Strategic Risk & Mitigation": [{"text": "Legacy system retirement plan"}, {"text": "User adoption strategy and training module"}],
+      "Market Drivers & Competition": [{"text": "Moving to Just-in-Time (JIT) manufacturing"}, {"text": "Increasing supply chain transparency"}],
+      "Operational Requirements": [{"text": "Hybrid cloud deployment strategy"}, {"text": "24/7 internal ERP support desk"}],
+      "Regulatory & Compliance": [{"text": "SOX compliance controls for financial reporting"}, {"text": "Environmental reporting (ESG) integration"}],
+      "Strategic Roadmap": [{"text": "Finance module go-live first"}, {"text": "Global warehouse rollout secondary"}]
+    },
+    "compliance": ["SOX", "IFRS", "GDPR"],
+    "tags": ["erp", "manufacturing", "finance", "enterprise"]
+  },
+  {
+    "id": "biz_003",
+    "domain": "business",
+    "project_name": "Supply Chain Optimization",
+    "industry": "Logistics & Supply Chain",
+    "requirements": [
+      "Vendor portal must allow suppliers to update their own shipment status.",
+      "Procurement workflow shall require three-tier approval for orders >$50k.",
+      "KPI dashboards must track on-time delivery and supplier quality.",
+      "The system must integrate with major shipping carriers via EDI/API.",
+      "AI-driven demand forecasting shall use historical sales data.",
+      "Warehouse management module must optimize pick paths for efficiency.",
+      "Route optimization for the delivery fleet must update daily.",
+      "Inventory tracking shall use RFID technology for asset management.",
+      "The system must support automated stock replenishment based on safety stock.",
+      "Risk assessment engine shall flag potential weather or strike delays.",
+      "Environment tracking (ESG) for delivery emissions is required.",
+      "Supplier scorecarding must be accessible to procurement managers."
+    ],
+    "nfrs": [
+      "Global visibility of all shipments must be updated every 30 minutes.",
+      "The system must handle 10,000 orders per day during peak seasons.",
+      "Cybersecurity for vendor data must be audited annually.",
+      "Vendor portal must support all modern browsers and mobile devices."
+    ],
+    "domain_sections": {
+      "Market Entry Strategy": [{"text": "Optimization of nationwide logistics network"}, {"text": "Integration of 200+ global suppliers"}],
+      "Business Objectives & KPIs": [{"text": "15% reduction in transportation costs"}, {"text": "Inventory turnover increase by 2x"}],
+      "ROI & Financial Projections": [{"text": "Projected annual savings of $2.5M"}, {"text": "Efficiency gains worth $500k in labor costs"}],
+      "Strategic Risk & Mitigation": [{"text": "Cybersecurity for external vendor access"}, {"text": "Supply chain resilience and redundancy plan"}],
+      "Market Drivers & Competition": [{"text": "Reducing lead times to compete with Amazon"}, {"text": "Transitioning to real-time supply chain monitoring"}],
+      "Operational Requirements": [{"text": "AWS-based cloud infrastructure"}, {"text": "API-first integration architecture"}],
+      "Regulatory & Compliance": [{"text": "Global customs and tariff database update"}, {"text": "Conflict minerals supply chain tracking"}],
+      "Strategic Roadmap": [{"text": "RFID pilot in central warehouse"}, {"text": "Full carrier integration rollout"}]
+    },
+    "compliance": ["ISO 28000", "GDPR", "SOX"],
+    "tags": ["supply-chain", "logistics", "procurement", "kpi"]
+  },
+  {
+    "id": "biz_004",
+    "domain": "business",
+    "project_name": "Customer Loyalty Program",
+    "industry": "Retail & Consumer",
+    "requirements": [
+      "Points engine must calculate rewards based on purchase value and tier.",
+      "Tier management shall support Silver, Gold, and Platinum levels.",
+      "Redemption catalog must be accessible via mobile app and web.",
+      "Personalized offers shall be sent via push notifications and email.",
+      "Integration with in-store POS (Point of Sale) systems is mandatory.",
+      "Analytics dashboard for marketing must show engagement metrics.",
+      "Partnership module must allow points to be earned at allied brands.",
+      "Fraud detection system shall flag unusual points redemption patterns.",
+      "Birthday and anniversary bonus points must be automated.",
+      "The system must support gift card purchase and points transfer.",
+      "Member support dashboard must show full history of engagement.",
+      "Referral program shall reward users for successful new sign-ups."
+    ],
+    "nfrs": [
+      "Data privacy for member profiles must follow GDPR and CCPA.",
+      "System must support 5 million active users with low latency.",
+      "Points calculations must be completed within 2 seconds of purchase.",
+      "Platform must be scalable to handle holiday and Black Friday surges."
+    ],
+    "domain_sections": {
+      "Market Entry Strategy": [{"text": "Rollout to North American retail stores first"}, {"text": "Digital-only launch for online customers"}],
+      "Business Objectives & KPIs": [{"text": "Targeting 30% increase in repeat purchase rate"}, {"text": "Average basket size growth of 10%"}],
+      "ROI & Financial Projections": [{"text": "Incremental revenue projection of $10M"}, {"text": "Customer acquisition cost (CAC) reduction"}],
+      "Strategic Risk & Mitigation": [{"text": "Program cannibalization risk monitoring"}, {"text": "Data security and privacy compliance officer"}],
+      "Market Drivers & Competition": [{"text": "Matching competitors' personalized reward offerings"}, {"text": "Enhancing customer emotional loyalty"}],
+      "Operational Requirements": [{"text": "Managed cloud database for scale"}, {"text": "Third-party loyalty API integration"}],
+      "Regulatory & Compliance": [{"text": "Consumer privacy laws compliance"}, {"text": "Tax implications of points-based rewards"}],
+      "Strategic Roadmap": [{"text": "Mobile app loyalty integration"}, {"text": "Tiered reward system launch Q3"}]
+    },
+    "compliance": ["GDPR", "CCPA", "PCI-DSS"],
+    "tags": ["loyalty", "retail", "marketing", "points"]
+  },
+  {
+    "id": "biz_005",
+    "domain": "business",
+    "project_name": "Digital Banking Platform",
+    "industry": "Finance & Fintech",
+    "requirements": [
+      "Account management must allow users to view balances and transactions.",
+      "Transaction limits must be configurable at the card and account level.",
+      "The system shall facilitate AML (Anti-Money Laundering) compliance checks.",
+      "Open banking API integration must follow PSD2 regulations.",
+      "Security features must include biometric login and device binding.",
+      "Real-time fraud detection shall flag suspicious cross-border transfers.",
+      "Push notifications must alert users of every debit/credit event.",
+      "Internal bank admin panel must monitor system health and liquidity.",
+      "Support for instant SEPA and international SWIFT transfers.",
+      "Automated credit scoring algorithm for instant loan applications.",
+      "Customers shall be able to open accounts digitally via e-KYC.",
+      "Customer support chat must be integrated directly into the app."
+    ],
+    "nfrs": [
+      "System must maintain 99.999% availability for financial services.",
+      "End-to-end encryption for all financial messages is mandatory.",
+      "System must comply with PCI-DSS and national banking regulations.",
+      "Core banking processing must handle 50,000 transactions per second."
+    ],
+    "domain_sections": {
+      "Market Entry Strategy": [{"text": "Fintech startup launch in EU (PSD2 focus)"}, {"text": "Neobanking expansion into North America"}],
+      "Business Objectives & KPIs": [{"text": "Targeting 1 million active accounts in 24 months"}, {"text": "Cost per transaction under $0.05"}],
+      "ROI & Financial Projections": [{"text": "Series A funding allocation of $20M"}, {"text": "Breakeven projected in Year 3"}],
+      "Strategic Risk & Mitigation": [{"text": "Regulatory change risk management"}, {"text": "Cybersecurity threat mitigation strategy"}],
+      "Market Drivers & Competition": [{"text": "Capitalizing on the shift to branchless banking"}, {"text": "Offer better FX rates than traditional banks"}],
+      "Operational Requirements": [{"text": "High-security financial cloud deployment"}, {"text": "DevSecOps banking operations team"}],
+      "Regulatory & Compliance": [{"text": "PSD2 compliance for European open banking"}, {"text": "FATCA and global tax reporting"}],
+      "Strategic Roadmap": [{"text": "Consumer account launch first"}, {"text": "Business and investment modules in Year 2"}]
+    },
+    "compliance": ["PSD2", "PCI-DSS", "GDPR", "FINRA"],
+    "tags": ["fintech", "banking", "finance", "compliance"]
+  }
+]

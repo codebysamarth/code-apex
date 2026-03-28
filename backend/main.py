@@ -29,7 +29,26 @@ from pydantic import BaseModel
 from sse_starlette.sse import EventSourceResponse
 from dotenv import load_dotenv
 
+import nltk
 load_dotenv()
+
+# Pre-download NLTK data to avoid blocking during requests
+nltk.download("punkt", quiet=True)
+nltk.download("punkt_tab", quiet=True)
+
+# Standardize agent imports at top level to avoid re-import overhead and circularity
+from agents.ingest_agent import ingest_agent
+from agents.classifier_agent import classify_agent
+from agents.rag_agent import rag_agent
+from agents.extractor_agent import extractor_agent
+from agents.domain_extractor_agent import domain_extractor_agent
+from agents.timeline_agent import timeline_agent
+from agents.critique_agent import critique_agent
+from agents.score_agent import score_agent
+from agents.render_agent import render_agent
+from agents.suggestion_agent import suggestion_agent
+from agents.faiss_ingest_agent import faiss_ingest_agent
+from faiss_client import FAISSClient
 
 # ---------------------------------------------------------------------------
 # App setup
@@ -55,12 +74,14 @@ class ExtractRequest(BaseModel):
     text: str
     source_type: str = "email"
     project_name: str = "Untitled Project"
+    domain: str = "software"
 
 
 class MultiExtractRequest(BaseModel):
     texts: List[str]
     source_names: List[str] = []
     project_name: str = "Untitled Project"
+    domain: str = "software"
 
 
 # Store last extraction result for export
@@ -107,20 +128,13 @@ async def extract_brd(request: ExtractRequest):
         raise HTTPException(status_code=400, detail="Input text cannot be empty")
 
     async def event_generator() -> AsyncGenerator[dict, None]:
-        from agents.ingest_agent import ingest_agent
-        from agents.classifier_agent import classify_agent
-        from agents.rag_agent import rag_agent
-        from agents.extractor_agent import extractor_agent
-        from agents.timeline_agent import timeline_agent
-        from agents.critique_agent import critique_agent
-        from agents.score_agent import score_agent
-        from agents.render_agent import render_agent
-
-        # Build initial state
+        # Build initial state conforming to the new schema
         state = {
             "raw_input": request.text,
             "source_type": request.source_type,
             "project_name": request.project_name,
+            "domain": request.domain or "software",
+            "domain_data": {},
             "classified_sentences": [],
             "rag_examples": [],
             "functional_reqs": [],
@@ -135,25 +149,53 @@ async def extract_brd(request: ExtractRequest):
             "source_map": {},
             "processing_times": {},
             "analytics": {},
+            "suggestions": [],
+            "matched_brds": [],
+            "suggestion_count": 0,
             "retry_count": 0,
             "error": None,
         }
 
-        # Agent sequence with SSE events
-        agents = [
-            ("ingest", ingest_agent),
-            ("classify", classify_agent),
-            ("rag", rag_agent),
-            ("extract", extractor_agent),
-            ("timeline", timeline_agent),
-            ("critique", critique_agent),
-            ("score", score_agent),
-            ("render", render_agent),
-        ]
+        # Agent sequence branching
+        if state["domain"] == "software":
+            agents = [
+                ("ingest", ingest_agent),
+                ("classify", classify_agent),
+                ("rag", rag_agent),
+                ("extract", extractor_agent),
+                ("suggestion", suggestion_agent),
+                ("timeline", timeline_agent),
+                ("critique", critique_agent),
+                ("score", score_agent),
+                ("render", render_agent),
+                ("faiss_ingest", faiss_ingest_agent),
+            ]
+        else:
+            agents = [
+                ("ingest", ingest_agent),
+                ("classify", classify_agent),
+                ("rag", rag_agent),
+                ("domain_extractor", domain_extractor_agent),
+                ("suggestion", suggestion_agent),
+                ("timeline", timeline_agent),
+                ("critique", critique_agent),
+                ("score", score_agent),
+                ("render", render_agent),
+                ("faiss_ingest", faiss_ingest_agent),
+            ]
 
         try:
             for agent_name, agent_fn in agents:
-                # Run agent in thread pool to avoid blocking the event loop
+                # Log start
+                yield {
+                    "event": "message",
+                    "data": json.dumps({
+                        "type": "log",
+                        "payload": f"Agent [{agent_name}] engaged...",
+                    }),
+                }
+
+                # Run agent in thread pool...
                 loop = asyncio.get_event_loop()
                 state = await loop.run_in_executor(None, agent_fn, state)
 
@@ -177,6 +219,7 @@ async def extract_brd(request: ExtractRequest):
                         "rag_count": len(state.get("rag_examples", [])),
                         "fr_count": len(state.get("functional_reqs", [])),
                         "nfr_count": len(state.get("nfrs", [])),
+                        "suggestion_count": state.get("suggestion_count", 0),
                         "source_type": state.get("source_type", ""),
                     },
                 }
@@ -184,6 +227,15 @@ async def extract_brd(request: ExtractRequest):
                 yield {
                     "event": "message",
                     "data": json.dumps(partial),
+                }
+
+                # Log completion
+                yield {
+                    "event": "message",
+                    "data": json.dumps({
+                        "type": "log",
+                        "payload": f"Agent [{agent_name}] completed successfully.",
+                    }),
                 }
 
                 # Small yield to allow other async tasks
@@ -221,6 +273,7 @@ async def extract_brd(request: ExtractRequest):
 async def extract_from_file(
     file: UploadFile = File(...),
     project_name: str = Form("Untitled Project"),
+    domain: str = Form("software"),
 ):
     """
     Extract BRD from uploaded file (PDF, DOCX, TXT, VTT, SRT, MD).
@@ -261,6 +314,7 @@ async def extract_from_file(
         text=parsed.text,
         source_type=parsed.source_type,
         project_name=project_name,
+        domain=domain,
     )
     
     return await extract_brd(request)
@@ -275,6 +329,7 @@ async def extract_from_multi(
     texts: str = Form(None),  # JSON array of texts
     source_names: str = Form(None),  # JSON array of names
     project_name: str = Form("Untitled Project"),
+    domain: str = Form("software"),
 ):
     """
     Extract BRD from multiple documents (files and/or text inputs).
@@ -327,6 +382,7 @@ async def extract_from_multi(
         text=prepared["raw_input"],
         source_type=prepared["source_type"],
         project_name=project_name,
+        domain=domain,
     )
     
     return await extract_brd(request)
@@ -661,3 +717,18 @@ async def get_model_stats():
             "noise":          {"precision": 0.90, "recall": 0.93, "f1": 0.91},
         },
     }
+
+@app.get("/api/faiss-stats")
+async def get_faiss_stats():
+    """Get FAISS RAG index statistics."""
+    try:
+        from faiss_client import FAISSClient
+        client = FAISSClient()
+        return client.get_stats()
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/api/health")
+async def get_health():
+    """System health check."""
+    return {"status": "ok", "timestamp": datetime.now().isoformat()}

@@ -20,8 +20,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-nltk.download("punkt", quiet=True)
-nltk.download("punkt_tab", quiet=True)
+# NLTK downloads moved to main.py
 
 # ---------------------------------------------------------------------------
 # Module-level model loading — runs ONCE at startup
@@ -60,76 +59,92 @@ def normalize_text(text: str) -> str:
 # ---------------------------------------------------------------------------
 # Main agent function
 # ---------------------------------------------------------------------------
+def _llm_classify(sentences: list[str], domain: str) -> list[dict]:
+    """Uses LLM to classify sentences into BRD categories for non-software domains."""
+    from mcp_config import get_llm_safe
+    from langchain_core.messages import HumanMessage
+    
+    llm = get_llm_safe()
+    if not llm:
+        return []
+
+    prompt = f"""You are a {domain} Requirement Expert. Classify each sentence into exactly one of these labels:
+Labels: [functional_req, nfr, decision, timeline, stakeholder, noise]
+
+Sentences:
+{chr(10).join(f"{i+1}. {s}" for i, s in enumerate(sentences))}
+
+Return ONLY a JSON array of objects: [{{"text": "...", "label": "...", "confidence": 0.9}}]
+"""
+    try:
+        response = llm.invoke([HumanMessage(content=prompt)])
+        raw_content = response.content
+        if isinstance(raw_content, list):
+            content = "".join([c["text"] if isinstance(c, dict) and "text" in c else str(c) for c in raw_content])
+        else:
+            content = str(raw_content)
+        content = content.strip()
+        # Clean response
+        content = re.sub(r"^```(?:json)?\n?", "", content)
+        content = re.sub(r"\n?```$", "", content)
+        
+        # Extract JSON if surrounded by text
+        json_match = re.search(r'\[\s*\{.*\}\s*\]', content, re.DOTALL)
+        if json_match:
+            content = json_match.group(0)
+            
+        data = json.loads(content)
+        return data
+    except Exception as e:
+        print(f"[ClassifierAgent] LLM classification failed: {e}")
+        # Return fallback noise classification to keep pipeline moving without crash
+        return [{"text": s, "label": "noise", "confidence": 0.0} for s in sentences]
+
 def classify_agent(state: BRDState) -> BRDState:
     """
-    Classifies sentences in raw_input using the trained ML model.
-
-    Pipeline:
-    1. Tokenise raw_input into sentences using NLTK
-    2. Filter by word count (8–120 words)
-    3. Normalise each sentence
-    - Predict label + confidence
-    4. Apply post-processing rules (overrides)
-    5. Apply noise filtering logic
-    6. Store results in state["classified_sentences"]
-
-    Noise filtering:
-    - noise + confidence < 0.50 → DISCARD (clear noise)
-    - noise + confidence >= 0.50 → KEEP (might be missed req)
-    - all non-noise labels → always KEEP
+    Classifies sentences in raw_input.
+    Software domain -> Logistic Regression ML Model
+    Other domains   -> Zero-Shot LLM Classifier (Industry-aware)
     """
     start_time = time.time()
+    domain = state.get("domain", "software")
+    raw = state.get("raw_input", "")
     
-    # Import post-processing rules (integration of user-added file)
-    try:
-        from post_processing_rules import apply_post_processing_rules
-    except ImportError:
-        apply_post_processing_rules = None
-        print("[ClassifierAgent] WARNING: post_processing_rules.py not found — using raw ML output.")
+    if not raw:
+        state["classified_sentences"] = []
+        return state
 
     try:
-        if _pipeline is None:
-            state["error"] = (
-                "Classifier model not loaded. "
-                f"Ensure classifier.pkl exists at {MODEL_PATH}/"
-            )
-            return state
-
-        raw = state.get("raw_input", "")
-        if not raw:
-            state["classified_sentences"] = []
-            return state
-
         sentences = nltk.sent_tokenize(raw)
-
         classified = []
-        for sent in sentences:
-            # Word count filter - reduced minimum to catch short requirements
-            word_count = len(sent.split())
-            if word_count < 4 or word_count > 150:
-                continue
 
-            normalized = normalize_text(sent)
-            label = _pipeline.predict([normalized])[0]
-            proba = _pipeline.predict_proba([normalized])[0]
-            confidence = float(max(proba))
-            
-            # Application of post-processing overrides for high accuracy integration
-            if apply_post_processing_rules:
-                label, confidence, is_overridden = apply_post_processing_rules(sent, label, confidence)
-                if is_overridden:
-                    print(f"[ClassifierAgent] Rule Override: '{label}' ({confidence}) for '{sent[:30]}...'")
+        # BRANCH 1: Software domain uses the trained ML pipeline
+        if domain == "software" and _pipeline is not None:
+            for sent in sentences:
+                word_count = len(sent.split())
+                if word_count < 3:
+                    classified.append({"text": sent, "label": "noise", "confidence": 1.0})
+                    continue
+                
+                label = _pipeline.predict([sent])[0]
+                probs = _pipeline.predict_proba([sent])[0]
+                confidence = round(float(max(probs)), 2)
+                classified.append({"text": sent, "label": label, "confidence": confidence})
+        
+        # BRANCH 2: All other domains use the industry-aware Zero-Shot LLM Classifier
+        else:
+            # Process in batches of 15 to manage LLM context
+            for i in range(0, len(sentences), 15):
+                batch = sentences[i : i+15]
+                batch_classified = _llm_classify(batch, domain)
+                classified.extend(batch_classified)
 
-            # More lenient noise filtering - keep borderline cases for LLM review
-            if label == "noise" and confidence > 0.85:
-                continue  # Only discard very confident noise
-
-            classified.append({
-                "text": sent,
-                "label": label,
-                "confidence": round(confidence, 4),
-                "normalized_text": normalized,
-            })
+        # Apply industry-specific post-processing if available
+        from post_processing_rules import apply_post_processing_rules 
+        for item in classified:
+            label, confidence, _ = apply_post_processing_rules(item["text"], item["label"], item["confidence"], domain)
+            item["label"] = label
+            item["confidence"] = confidence
 
         state["classified_sentences"] = classified
         state["processing_times"]["classifier"] = round(time.time() - start_time, 3)
@@ -153,6 +168,7 @@ def classify_agent(state: BRDState) -> BRDState:
 
     except Exception as e:
         state["error"] = f"Classifier agent error: {str(e)}"
+        print(f"[classifier_agent] Error: {str(e)}")
 
     return state
 

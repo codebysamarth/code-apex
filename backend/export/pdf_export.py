@@ -237,6 +237,49 @@ def _export_with_reportlab(brd_data: dict, output_path: Optional[str] = None) ->
             if gap.get('suggestion'):
                 story.append(Paragraph(f"<i>Suggestion: {gap.get('suggestion')}</i>", body_style))
     
+    # Dynamic Domain Sections (ApexBRD+)
+    domain_data = brd_data.get('domain_data', {})
+    if domain_data and domain_data.get('sections'):
+        domain_name = brd_data.get('domain', 'Industrial').capitalize()
+        story.append(Paragraph(f"{domain_name} Domain Extraction", section_style))
+        
+        for section_title, items in domain_data['sections'].items():
+            if not items:
+                continue
+                
+            story.append(Paragraph(section_title, ParagraphStyle(
+                'SubSection', parent=body_style, fontSize=12, fontName='Helvetica-Bold', spaceBefore=10, spaceAfter=5
+            )))
+            
+            for item in items:
+                title = item.get('title') or item.get('name') or item.get('objective', 'Requirement')
+                desc = item.get('description') or item.get('requirement') or item.get('specification', '')
+                priority = item.get('priority', '')
+                
+                p_text = f"<b>{title}</b>"
+                if priority:
+                    p_text += f" <font color='#4a5568'>[{priority}]</font>"
+                
+                story.append(Paragraph(p_text, body_style))
+                if desc:
+                    story.append(Paragraph(desc, ParagraphStyle('ItemDesc', parent=body_style, leftIndent=20)))
+                
+                if item.get('mitigation'):
+                    story.append(Paragraph(f"<i>Mitigation: {item.get('mitigation')}</i>", ParagraphStyle('Mitigation', parent=body_style, leftIndent=20, textColor=colors.HexColor('#af2b21'))))
+                    
+                story.append(Spacer(1, 4))
+        
+        # Domain scores
+        scores = domain_data.get('domain_scores', {})
+        if scores:
+            story.append(Spacer(1, 10))
+            story.append(Paragraph("Domain Performance Metrics", ParagraphStyle('ScoreHeader', parent=body_style, fontSize=11, fontName='Helvetica-Bold')))
+            
+            for s_name, s_val in scores.items():
+                val = s_val.get('value', 0) if isinstance(s_val, dict) else s_val
+                rat = s_val.get('rationale', '') if isinstance(s_val, dict) else ''
+                story.append(Paragraph(f"• {s_name.replace('_', ' ').title()}: {val:.1%} - {rat}", body_style))
+
     # Build PDF
     doc.build(story)
     

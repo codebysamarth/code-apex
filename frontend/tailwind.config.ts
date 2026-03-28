@@ -9,37 +9,59 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#03060f",
-        card: "#0a0e1a",
-        border: "#1f2937",
+        background: "#ffffff",
+        foreground: "#111827",
+        card: {
+          DEFAULT: "#ffffff",
+          foreground: "#111827",
+        },
+        popover: {
+          DEFAULT: "#ffffff",
+          foreground: "#111827",
+        },
         primary: {
-          DEFAULT: "#7C3AED",
-          hover: "#8b5cf6",
+          DEFAULT: "#7c3aed",
+          foreground: "#ffffff",
         },
         secondary: {
-          DEFAULT: "#00d4ff",
-          hover: "#33ddff",
+          DEFAULT: "#f3f4f6",
+          foreground: "#111827",
         },
-        text: {
-          primary: "#ffffff",
-          secondary: "#94a3b8",
-          muted: "#64748b",
-        }
+        muted: {
+          DEFAULT: "#f9fafb",
+          foreground: "#6b7280",
+        },
+        accent: {
+          DEFAULT: "#f3f4f6",
+          foreground: "#111827",
+        },
+        destructive: {
+          DEFAULT: "#ef4444",
+          foreground: "#ffffff",
+        },
+        border: "#e5e7eb",
+        input: "#e5e7eb",
+        ring: "#7c3aed",
       },
       borderRadius: {
+        'lg': '0.5rem',
+        'md': 'calc(0.5rem - 2px)',
+        'sm': 'calc(0.5rem - 4px)',
         'xl': '12px',
         '2xl': '16px',
         '3xl': '24px',
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'Inter', 'sans-serif'],
+        sans: ['Inter', 'var(--font-inter)', 'sans-serif'],
       },
-      spacing: {
-        '4': '4px',
-        '8': '8px',
-        '12': '12px',
-        '16': '16px',
-        '20': '20px',
+      animation: {
+        'pulse-subtle': 'pulse-subtle 3s ease-in-out infinite',
+      },
+      keyframes: {
+        'pulse-subtle': {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.8' },
+        }
       }
     },
   },

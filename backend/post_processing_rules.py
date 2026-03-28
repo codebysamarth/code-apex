@@ -1,11 +1,30 @@
 
 import re
 
-def apply_post_processing_rules(text, ml_prediction, ml_confidence):
-    """Override ML predictions for edge cases using expert heuristics."""
+def apply_post_processing_rules(text, ml_prediction, ml_confidence, domain='software'):
+    """Override ML predictions for edge cases using expert heuristics + domain context."""
     s = text.lower()
     
-    # 1. Stakeholders (Named Owners)
+    # --- DOMAIN SPECIFIC OVERRIDES ---
+    if domain == 'healthcare':
+        if re.search(r'\b(hipaa|phi|ehr|emr|clinical|patient|regulatory|fda|legal)\b', s):
+            return 'nfr', max(ml_confidence, 0.95), True
+        if re.search(r'\b(hl7|fhir|interoperability|dicom)\b', s):
+            return 'functional_req', max(ml_confidence, 0.90), True
+            
+    elif domain == 'mechanical':
+        if re.search(r'\b(tolerance|psi|bar|material|alloy|cad|spec|mechanical|thermal|load)\b', s):
+            return 'nfr', max(ml_confidence, 0.95), True
+        if re.search(r'\b(milling|printing|assembly|testing|validation|safety factor)\b', s):
+            return 'functional_req', max(ml_confidence, 0.90), True
+            
+    elif domain == 'business':
+        if re.search(r'\b(roi|finch|mifid|gdpr|compliance|legal|contract|audit|risk)\b', s):
+            return 'nfr', max(ml_confidence, 0.90), True
+        if re.search(r'\b(roadmap|strategic|lever|pivot|market share|growth)\b', s):
+            return 'decision', max(ml_confidence, 0.85), True
+
+    # --- GENERAL HEURISTICS (Legacy) ---
     if re.search(r'\b[A-Z][a-z]+\s+[A-Z][a-z]+\s+will\s+own\b', text):
         return 'stakeholder', 0.90, True
     if re.search(r'\bwill\s+own\s+(the\s+)?(product|requirements?|design|feature|sign-off)', s):

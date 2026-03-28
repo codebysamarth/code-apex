@@ -1,0 +1,147 @@
+[
+  {
+    "id": "soft_001",
+    "domain": "software",
+    "project_name": "E-Commerce Platform",
+    "industry": "Retail",
+    "requirements": [
+      "The system must allow users to log in with Google and custom email accounts.",
+      "The platform shall support a persistent shopping cart for guest and logged-in users.",
+      "Inventory must be updated in real-time when an order is placed.",
+      "Users shall be able to filter products by category, price, and rating.",
+      "The layout must be fully responsive and work on mobile/tablet browser.",
+      "Order history shall be accessible from the user's dashboard.",
+      "Standard shipping and express shipping options must be available at checkout.",
+      "System shall support multiple payment gateways including Stripe and PayPal.",
+      "Admins must have a dashboard to manage users, orders, and products.",
+      "Search results shall prioritize relevant products based on keyword weight.",
+      "System shall send automated order confirmation emails to customers.",
+      "Coupons and promo codes must be validated before applying to the total."
+    ],
+    "nfrs": [
+      "Site must load in under 2 seconds for 95% of users globally.",
+      "Platform shall maintain 99.9% uptime per month excluding maintenance.",
+      "All credit card data must be handled using PCI-DSS compliant methods.",
+      "System must support up to 50,000 concurrent visitors during peak sales."
+    ],
+    "domain_sections": {},
+    "compliance": ["PCI-DSS", "GDPR"],
+    "tags": ["ecommerce", "retail", "payments", "shopping"]
+  },
+  {
+    "id": "soft_002",
+    "domain": "software",
+    "project_name": "HR Management System",
+    "industry": "Enterprise",
+    "requirements": [
+      "Employees must be able to view and download their monthly payslips.",
+      "The system shall allow managers to approve leave requests with one click.",
+      "The payroll module must calculate taxes automatically based on country rules.",
+      "Performance appraisals shall be scheduled annually and tracked by HR.",
+      "The org chart must be dynamically generated from data in the employee database.",
+      "Automatic notifications shall be sent for upcoming contract renewals.",
+      "Multi-level approval workflows must be configurable for expenses.",
+      "Onboarding checklists for new hires must include document upload features.",
+      "Offboarding process shall automate access revocation across IT assets.",
+      "The system must support timesheet submission and tracking per project.",
+      "Employee birthdays and work anniversaries shall be displayed on the intranet.",
+      "Internal recruitment portal must allow employees to apply for internal roles."
+    ],
+    "nfrs": [
+      "Sensitive HR data must be encrypted at rest (AES-256) and in transit (TLS 1.3).",
+      "System must integrate with existing Active Directory via SAML 2.0.",
+      "Dashboard must update in real-time as background tasks complete.",
+      "The platform must support high availability with automated disaster recovery."
+    ],
+    "domain_sections": {},
+    "compliance": ["GDPR", "SAML 2.0"],
+    "tags": ["hr", "payroll", "enterprise", "workforce"]
+  },
+  {
+    "id": "soft_003",
+    "domain": "software",
+    "project_name": "Learning Management System",
+    "industry": "Education",
+    "requirements": [
+      "Instructors must be able to upload video lectures in MP4 and AVI formats.",
+      "The system shall support quizzes with multiple choice and short answer questions.",
+      "Certificates must be automatically generated upon course completion.",
+      "Students shall be able to track their progress through course modules.",
+      "The discussion forum must support threaded comments and user tagging.",
+      "System shall allow instructors to set prerequisites for specific courses.",
+      "Mobile app synchronization must ensure offline progress is saved when reconnected.",
+      "Admins must be able to generate reports on student enrollment and grades.",
+      "Course feedback surveys shall be triggered at the end of each module.",
+      "Live webinar integration with Zoom and Teams must be supported.",
+      "The resource library shall allow downloading of PDF and PPT files.",
+      "Notification engine must send reminders for upcoming quiz deadlines."
+    ],
+    "nfrs": [
+      "Video streaming must maintain quality for low-bandwidth connections via adaptive bitrate.",
+      "The system must support 100,000 active students simultaneously.",
+      "Data privacy for student records must strictly follow COPPA guidelines.",
+      "Site must achieve WCAG 2.1 Level AA accessibility standards."
+    ],
+    "domain_sections": {},
+    "compliance": ["COPPA", "WCAG 2.1 AA"],
+    "tags": ["education", "lms", "elearning", "video"]
+  },
+  {
+    "id": "soft_004",
+    "domain": "software",
+    "project_name": "Real Estate Listing Portal",
+    "industry": "Real Estate",
+    "requirements": [
+      "Agents must be able to upload high-resolution property images and virtual tours.",
+      "The map search feature shall display property pins using Mapbox API.",
+      "Mortgage calculator must allow users to estimate monthly payments.",
+      "Users shall be able to save favorite listings and receive price drop alerts.",
+      "The agent portal must allow agents to manage their active and sold listings.",
+      "Lead generation forms must send inquiries directly to the listing agent.",
+      "Property data shall be synced daily from Multiple Listing Services (MLS) feeds.",
+      "Advanced filtering shall include bedroom count, square footage, and school zones.",
+      "Neighborhood demographics and safety data must be shown for each property.",
+      "Users shall be able to schedule property viewings via an integrated calendar.",
+      "Blog and news section for market trends must be manageable via CMS.",
+      "System must support both residential and commercial property categories."
+    ],
+    "nfrs": [
+      "The portal must process 2 million listings with sub-second search response.",
+      "Image processing must automatically generate optimized thumbnails for speed.",
+      "Integration with Mapbox must handle 500k map tiles per month without lag.",
+      "Security audit logs must track all changes to listing data for compliance."
+    ],
+    "domain_sections": {},
+    "compliance": ["ADA", "Fair Housing Act"],
+    "tags": ["realestate", "map", "listings", "property"]
+  },
+  {
+    "id": "soft_005",
+    "domain": "software",
+    "project_name": "Fleet Management System",
+    "industry": "Transportation",
+    "requirements": [
+      "The system must track vehicle GPS positions in real-time on a map dashboard.",
+      "Maintenance schedules shall be automatically generated based on mileage.",
+      "Driver management module must track license expiration and driving hours.",
+      "Fuel logs shall allow drivers to record refills and track average fuel economy.",
+      "Predictive analytics must flag vehicles and parts likely to fail soon.",
+      "Route optimization shall calculate paths for least fuel consumption.",
+      "System must send urgent alerts for speeding, harsh braking, and idling.",
+      "Inventory of spare parts shall be managed with automatic low-stock alerts.",
+      "Incident reporting must allow drivers to upload photos from a mobile app.",
+      "Cost analysis reports shall show total cost of ownership per vehicle.",
+      "Integration with OBD-II devices must extract diagnostic trouble codes.",
+      "Work order management shall track mechanic task time and parts used."
+    ],
+    "nfrs": [
+      "GPS location data must be updated every 10 seconds for active vehicles.",
+      "The system must handle 5,000 active vehicles concurrently reporting data.",
+      "All driver identity data (PII) must be stored in encrypted silos.",
+      "Mobile app must function offline and sync when 4G/LTE is available."
+    ],
+    "domain_sections": {},
+    "compliance": ["ELD Mandate", "FMCSA"],
+    "tags": ["fleet", "transportation", "gps", "maintenance"]
+  }
+]

@@ -1,0 +1,192 @@
+[
+  {
+    "id": "mech_001",
+    "domain": "mechanical",
+    "project_name": "Industrial Valve Assembly",
+    "industry": "Oil & Gas",
+    "requirements": [
+      "The valve body must be made from 316 stainless steel for corrosion resistance.",
+      "The assembly must handle a maximum pressure of 500 PSI.",
+      "Compliance with ASME B16.34 is required for high-pressure service.",
+      "O-rings must be Viton-brand to withstand temperatures up to 200°C.",
+      "Valve shall have a fail-safe closed mechanism on loss of air pressure.",
+      "The stem packing shall be adjustable without disassembly.",
+      "Body thickness must meet minimum ASME wall thickness calculations.",
+      "NPT threaded ends must match standard pipe fit specifications.",
+      "External surfaces shall be powder-coated for atmospheric protection.",
+      "Leakage rate must not exceed API 6D tight shutoff standards.",
+      "Lifting eyes must be integrated for crane-based installation.",
+      "The handle shall be padlockable in both open and closed positions."
+    ],
+    "nfrs": [
+      "Valve must operate for 50,000 cycles without significant seal fatigue.",
+      "Safety factor of 1.5x must be applied to all pressure-bearing walls.",
+      "Component must fit within a 300mm x 300mm envelope.",
+      "Design must be documented in STEP and DWG CAD formats."
+    ],
+    "domain_sections": {
+      "Mechanical Design Specifications": [{"text": "High-pressure seal design"}, {"text": "Modular actuator coupling"}],
+      "Material Properties & Stress Analysis": [{"text": "S-N curve for fatigue analysis"}, {"text": "Yield strength verification for 316 SS"}],
+      "Manufacturing & Assembly (DFM/DFA)": [{"text": "Designed for CNC milling"}, {"text": "Automated bolt tensioning for assembly"}],
+      "Tolerances & Precision Metrics": [{"text": "Seat flatness to 0.005mm"}, {"text": "Dimensional tolerance of +/- 0.1mm"}],
+      "Safety Factors & Structural Integrity": [{"text": "Burst pressure rating at 2,000 PSI"}, {"text": "FEA validation of stress concentrations"}],
+      "Environmental Operating Conditions": [{"text": "Offshore saltwater environment"}, {"text": "Operating range -20C to 200C"}],
+      "BOM (Bill of Materials) Constraints": [{"text": "Standard ASTM materials only"}, {"text": "No conflict minerals in raw parts"}],
+      "Project Timeline & Prototyping": [{"text": "First article inspection in Q2"}, {"text": "Pilot run of 100 units by Q3"}]
+    },
+    "compliance": ["ASME B16.34", "API 6D", "ISO 9001"],
+    "tags": ["valve", "oilandgas", "stainless", "pressure"]
+  },
+  {
+    "id": "mech_002",
+    "domain": "mechanical",
+    "project_name": "Automotive Brake Caliper",
+    "industry": "Automotive",
+    "requirements": [
+      "The caliper must be manufactured via aluminum die-casting for weight.",
+      "Fatigue testing shall exceed 1 million cycles at peak pedal force.",
+      "Surface finish must be anodized to prevent galvanic corrosion.",
+      "Hydraulic seals must meet SAE J1603 material specifications.",
+      "Bleed valves shall be accessible from a standard mechanic position.",
+      "The caliper must support ventilated rotor thicknesses from 20-25mm.",
+      "Mounting bolt pattern shall follow Euro-standard SUV specifications.",
+      "Brake pad replacement must be possible without removing the caliper body.",
+      "Heat dissipation fins must be integrated into the hydraulic housing.",
+      "The assembly shall include integrated wear sensors.",
+      "Pistons must be hard-chrome plated for low-friction operation.",
+      "Maximum deflection under full load shall not exceed 0.2mm."
+    ],
+    "nfrs": [
+      "Total weight of the caliper must not exceed 2.5kg.",
+      "Design must meet SAE J1153 brake performance standards.",
+      "Thermal expansion must be managed for stable braking at 500°C.",
+      "Salt spray resistance shall be tested per ISO 9227 standards."
+    ],
+    "domain_sections": {
+      "Mechanical Design Specifications": [{"text": "Four-piston opposed configuration"}, {"text": "High-strength alloy steel mounting brackets"}],
+      "Material Properties & Stress Analysis": [{"text": "Von Mises stress validation"}, {"text": "High-temperature seal compression sets"}],
+      "Manufacturing & Assembly (DFM/DFA)": [{"text": "Precision machining of piston bores"}, {"text": "Robotic assembly of seal tracks"}],
+      "Tolerances & Precision Metrics": [{"text": "Bore diameter tolerance of H7"}, {"text": "Piston clearance of 0.05 +/- 0.01mm"}],
+      "Safety Factors & Structural Integrity": [{"text": "Factor of Safety for fatigue life of 2.0"}, {"text": "Vibration isolation from wheel hub"}],
+      "Environmental Operating Conditions": [{"text": "Operating range -40C to 700C (at disc)"}, {"text": "Extreme road salt and moisture exposure"}],
+      "BOM (Bill of Materials) Constraints": [{"text": "Non-asbestos brake pad materials"}, {"text": "Traceability for all casting batches"}],
+      "Project Timeline & Prototyping": [{"text": "Dyno testing in Q1"}, {"text": "Track testing on prototype vehicle"}]
+    },
+    "compliance": ["SAE J1603", "ISO 9001", "IATF 16949"],
+    "tags": ["automotive", "braking", "mechanical", "safety"]
+  },
+  {
+    "id": "mech_003",
+    "domain": "mechanical",
+    "project_name": "HVAC Compressor Unit",
+    "industry": "Commercial HVAC",
+    "requirements": [
+      "The compressor must be a scroll-type for quiet commercial operation.",
+      "Vibration isolators shall reduce noise transmission to less than 65dB.",
+      "Thermal overload protection must be built-in with automatic reset.",
+      "Compressor must be compatible with R-410A and R-32 refrigerants.",
+      "Liquid-injection cooling shall be used for high-ambient operations.",
+      "The unit shall include an integrated sight glass for oil level check.",
+      "Connection ports must be brazed copper for leak-free sealing.",
+      "Compressor motor shall be variable-speed for energy efficiency.",
+      "System must support vertical and horizontal mounting configuration.",
+      "Internal pressure relief valve shall trigger at 650 PSI.",
+      "Crankcase heater must prevent liquid slugging during cold starts.",
+      "Inlet and outlet shall include integrated service valves."
+    ],
+    "nfrs": [
+      "Energy Efficiency Ratio (EER) must exceed 12.0.",
+      "Unit shall have a design life of 15 years under normal duty.",
+      "Maximum weight must allow for rooftop crane placement.",
+      "Corrosion-resistant coating must pass 1000-hour ASTM B117 salt spray."
+    ],
+    "domain_sections": {
+      "Mechanical Design Specifications": [{"text": "Scroll geometry optimization"}, {"text": "Low-noise discharge muffler"}],
+      "Material Properties & Stress Analysis": [{"text": "High-tensile cast iron housing"}, {"text": "Bearing life (L10) calculation of 80k hours"}],
+      "Manufacturing & Assembly (DFM/DFA)": [{"text": "Hermetic welding per AWS standards"}, {"text": "Automated helium leak testing"}],
+      "Tolerances & Precision Metrics": [{"text": "Scroll wrap tolerance +/- 0.002mm"}, {"text": "Radial clearance gap control"}],
+      "Safety Factors & Structural Integrity": [{"text": "Pressure vessel burst factor of 3.0"}, {"text": "Seismic mounting certification"}],
+      "Environmental Operating Conditions": [{"text": "Outdoor rooftop installation"}, {"text": "Ambient range -30C to 55C"}],
+      "BOM (Bill of Materials) Constraints": [{"text": "RoHS compliant electronics"}, {"text": "Standard refrigeration fitting sizes"}],
+      "Project Timeline & Prototyping": [{"text": "Psychrometric lab testing"}, {"text": "Pilot manufacturing run"}]
+    },
+    "compliance": ["ISO 9001", "UL 1995", "ASHRAE"],
+    "tags": ["hvac", "compressor", "thermal", "mechanical"]
+  },
+  {
+    "id": "mech_004",
+    "domain": "mechanical",
+    "project_name": "Hydraulic Pump",
+    "industry": "Heavy Machinery",
+    "requirements": [
+      "The pump must deliver a flow rate of 100 GPM at 3,000 RPM.",
+      "Hydraulic seals must handle 5,000 PSI operating pressure.",
+      "Shaft design shall include standard SAE splines for drivetrain coupling.",
+      "Contamination resistance must meet ISO 4406 18/16/13 class.",
+      "Pump shall include an internal pressure compensator.",
+      "Porting shall use standard SAE O-ring boss (ORB) threads.",
+      "Integrated bypass valve must facilitate easy cold-start unloading.",
+      "Casing must be made of high-strength nodular cast iron.",
+      "Flow control valve shall be adjustable via a manual knob.",
+      "Pump must be compatible with biodegradable hydraulic fluids.",
+      "Inlet port must be oversized to prevent cavitation at high RPM.",
+      "Mounting flange shall be SAE B-standard with 2-bolt pattern."
+    ],
+    "nfrs": [
+      "Volumetric efficiency must be above 95% at full load.",
+      "Operating noise levels must not exceed 80dBA at 1 meter.",
+      "Pump must survive a 10g vertical shock load while operational.",
+      "Startup temperature limit must be as low as -40°C."
+    ],
+    "domain_sections": {
+      "Mechanical Design Specifications": [{"text": "Variable displacement axial piston pump"}, {"text": "Pressure-compensated load-sensing control"}],
+      "Material Properties & Stress Analysis": [{"text": "Fatigue life of driven shaft"}, {"text": "Bronze plate wear analysis"}],
+      "Manufacturing & Assembly (DFM/DFA)": [{"text": "Precision diamond-honed cylinder bores"}, {"text": "Modular control block assembly"}],
+      "Tolerances & Precision Metrics": [{"text": "Piston-to-bore clearance of 10-15 microns"}, {"text": "Shaft runout less than 0.05mm"}],
+      "Safety Factors & Structural Integrity": [{"text": "Static pressure factor of 1.5"}, {"text": "Casing FEA for peak cyclical pulse"}],
+      "Environmental Operating Conditions": [{"text": "Mining and construction dust exposure"}, {"text": "Heavy vibration and impact loads"}],
+      "BOM (Bill of Materials) Constraints": [{"text": "Metric and Imperial part versions"}, {"text": "Proprietary seal material selection"}],
+      "Project Timeline & Prototyping": [{"text": "Performance bench testing"}, {"text": "Field testing on excavator prototype"}]
+    },
+    "compliance": ["ISO 4406", "SAE J744", "ISO 9001"],
+    "tags": ["hydraulic", "pump", "heavy-machinery", "mechanical"]
+  },
+  {
+    "id": "mech_005",
+    "domain": "mechanical",
+    "project_name": "Aerospace Structural Bracket",
+    "industry": "Aerospace",
+    "requirements": [
+      "The bracket must be machined from Ti-6Al-4V titanium alloy.",
+      "Weight must be minimized using generative design and FEA lattice.",
+      "Compliance with FAA DO-160 for environmental testing is required.",
+      "Static load testing must prove no permanent deformation at limit load.",
+      "Hole locations must maintain a tolerance of +/- 0.05mm.",
+      "Surface finish must meet AS9100 aerospace standards.",
+      "The bracket shall include integrated nut-plates for blind installation.",
+      "Design must avoid all sharp edges to minimize stress risers.",
+      "All dimensions shall be verified using CMM inspection.",
+      "Material must have full traceability back to the mill batch.",
+      "Riveting pattern shall follow standard aerospace pitch rules.",
+      "Bracket must withstand temperatures from -60°C to 150°C."
+    ],
+    "nfrs": [
+      "Ultimate safety factor of 1.5 against rupture must be proven.",
+      "Part must be 20% lighter than its aluminum predecessor.",
+      "Design life must exceed 20,000 flight hours.",
+      "Manufacturing must utilize 5-axis CNC to minimize setup errors."
+    ],
+    "domain_sections": {
+      "Mechanical Design Specifications": [{"text": "Bionic structural ribbing"}, {"text": "Integrated cable management attachments"}],
+      "Material Properties & Stress Analysis": [{"text": "Titanium Ti-6Al-4V Grade 5 specs"}, {"text": "Crack propagation life analysis"}],
+      "Manufacturing & Assembly (DFM/DFA)": [{"text": "Additive manufacturing potential (SLM)"}, {"text": "Reduced fastener count architecture"}],
+      "Tolerances & Precision Metrics": [{"text": "GD&T true position of 0.1mm"}, {"text": "Flatness under 0.02mm for mounting"}],
+      "Safety Factors & Structural Integrity": [{"text": "Safety factor 1.15 (Limit) / 1.5 (Ultimate)"}, {"text": "Dynamic modal analysis to avoid resonance"}],
+      "Environmental Operating Conditions": [{"text": "High-altitude atmospheric exposure"}, {"text": "Rapid thermal cycling"}],
+      "BOM (Bill of Materials) Constraints": [{"text": "Approved aerospace vendor parts only"}, {"text": "KMS certification required"}],
+      "Project Timeline & Prototyping": [{"text": "Stress test coupon validation"}, {"text": "Flight-ready unit production"}]
+    },
+    "compliance": ["AS9100", "FAA DO-160", "ISO 9001"],
+    "tags": ["aerospace", "titanium", "structural", "mechanical"]
+  }
+]

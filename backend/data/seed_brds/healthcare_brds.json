@@ -1,0 +1,192 @@
+[
+  {
+    "id": "health_001",
+    "domain": "healthcare",
+    "project_name": "Patient Portal",
+    "industry": "Healthcare IT",
+    "requirements": [
+      "The portal must allow patients to book appointments based on doctor availability.",
+      "Patients shall be able to view their medical history and test results.",
+      "Prescription refill requests must be sent directly to the pharmacy.",
+      "The system must notify patients for upcoming health screenings.",
+      "Access to the portal must require multi-factor authentication for PHI.",
+      "All medical records shall be stored in a FHIR-compliant format.",
+      "Waitlist alerts shall notify patients of earlier slot availability.",
+      "The dashboard must display a summary of current medications and dosages.",
+      "Patients shall be able to message their providers securely via the app.",
+      "Billing statements must include clear itemized insurance coverage details.",
+      "The system shall support proxy access for legal guardians and caregivers.",
+      "Vitals data from wearables must be synced into the patient record."
+    ],
+    "nfrs": [
+      "Patient data privacy must strictly follow HIPAA/HITECH regulations.",
+      "All PHI must be encrypted using AES-256 for data at rest.",
+      "The portal shall load patient records in under 3 seconds over 4G.",
+      "Audit logs must record every access to sensitive health information."
+    ],
+    "domain_sections": {
+      "Clinical Requirements": [{"text": "Support for clinical outcome tracking"}, {"text": "Integrated lab result visualization"}],
+      "Patient Safety & Risk Mitigation": [{"text": "Automated drug interaction alerts"}, {"text": "Patient fall risk assessment indicators"}],
+      "Care Workflow & EHR Integration": [{"text": "Bidirectional sync with Epic and Cerner EHRs"}, {"text": "Provider dashboard for clinical task management"}],
+      "Data Privacy (PHI / HIPAA / GDPR)": [{"text": "HIPAA-compliant data de-identification for research"}, {"text": "Granular user permission matrix for PHI"}],
+      "Compliance & FDA Regulatory": [{"text": "FDA Class I medical software registration"}, {"text": "Audit trail for 21 CFR Part 11 compliance"}],
+      "Clinical Decision Support (CDS)": [{"text": "Evidence-based clinical guidelines integrated into workflow"}, {"text": "Diagnostic assistance for chronic conditions"}],
+      "Stakeholders (Care Teams/IT)": [{"text": "Chief Medical Information Officer as sponsor"}, {"text": "IT Security team for HIPAA validation"}],
+      "Implementation Roadmap": [{"text": "Pilot launch in Cardiology department"}, {"text": "Full hospital rollout by Q4"}]
+    },
+    "compliance": ["HIPAA", "FHIR", "HL7", "GDPR"],
+    "tags": ["healthcare", "patient", "portal", "phi"]
+  },
+  {
+    "id": "health_002",
+    "domain": "healthcare",
+    "project_name": "Telemedicine Platform",
+    "industry": "Telehealth",
+    "requirements": [
+      "The platform must support high-definition video consultations.",
+      "E-prescriptions must be generated and sent electronically to pharmacies.",
+      "Patient consent forms must be digitally signed before every visit.",
+      "Insurance eligibility verification shall be automated within the app.",
+      "Waiting room dashboard shall update in real-time for providers.",
+      "Follow-up scheduling must occur immediately after the session ends.",
+      "The platform shall allow screen sharing for imaging and reports.",
+      "Providers must be able to document clinical notes during the call.",
+      "Translation services integration shall be available for multi-lingual care.",
+      "Billing events must be triggered automatically upon consultation close.",
+      "Patients shall be able to upload photos of symptoms for review.",
+      "Network quality monitoring must alert users of poor connections."
+    ],
+    "nfrs": [
+      "Video call latency must stay under 150ms for smooth clinical interaction.",
+      "Video and audio streams must be end-to-end encrypted (HIPAA).",
+      "The system must maintain 99.95% availability for urgent care calls.",
+      "Platform must be compatible with Chrome, Safari, and dedicated mobile apps."
+    ],
+    "domain_sections": {
+      "Clinical Requirements": [{"text": "Virtual physical exam workflows"}, {"text": "Diagnostic triage questionnaires"}],
+      "Patient Safety & Risk Mitigation": [{"text": "Emergency protocol trigger for critical vitals"}, {"text": "Session recording policy for clinical audit"}],
+      "Care Workflow & EHR Integration": [{"text": "Direct HL7 integration for pharmacy orders"}, {"text": "Automated clinical note drafting via AI"}],
+      "Data Privacy (PHI / HIPAA / GDPR)": [{"text": "Private key management for video sessions"}, {"text": "Data residency in national medical clouds"}],
+      "Compliance & FDA Regulatory": [{"text": "Medical device interoperability standards"}, {"text": "State-specific telemedicine practice rules"}],
+      "Clinical Decision Support (CDS)": [{"text": "Symptom checker based on medical knowledge graph"}, {"text": "Real-time prescription interaction checking"}],
+      "Stakeholders (Care Teams/IT)": [{"text": "Network of primary care physicians"}, {"text": "Compliance officer for telehealth laws"}],
+      "Implementation Roadmap": [{"text": "Cloud infrastructure setup"}, {"text": "Beta testing with 50 providers"}]
+    },
+    "compliance": ["HIPAA", "HL7", "GDPR"],
+    "tags": ["telehealth", "video", "eprescription", "video-call"]
+  },
+  {
+    "id": "health_003",
+    "domain": "healthcare",
+    "project_name": "ICU Monitoring System",
+    "industry": "Critical Care",
+    "requirements": [
+      "The system shall display real-time vitals for all ICU patients in one view.",
+      "Audible alerts must trigger for critical heart rate and O2 fluctuations.",
+      "Nurse workflow dashboard must prioritize task lists by patient severity.",
+      "Device integration shall support monitors, ventilators, and infusion pumps.",
+      "The system must maintain a full audit trail of all clinical actions.",
+      "Shift handover reports shall be generated automatically from the system.",
+      "Trend analysis must highlight deteriorating patient conditions over 24h.",
+      "The interface must support touch-screen interaction for sterile environments.",
+      "Early Warning Scores (EWS) must be calculated and shown prominently.",
+      "Medication administration records (MAR) must sync with the pharmacy.",
+      "System shall support remote monitoring for consulting specialists.",
+      "Emergency response protocols shall be displayed on the screen during codes."
+    ],
+    "nfrs": [
+      "System failure must trigger an immediate failsafe hard-wired alarm.",
+      "Vitals data processing must maintain sub-100ms end-to-end latency.",
+      "Interface must remain readable under various hospital lighting conditions.",
+      "Local server redundancy is required for 100% vital data continuity."
+    ],
+    "domain_sections": {
+      "Clinical Requirements": [{"text": "Invasive hemodynamic monitoring integration"}, {"text": "Ventilator waveform analysis"}],
+      "Patient Safety & Risk Mitigation": [{"text": "Alarm fatigue reduction algorithms"}, {"text": "Critical value reporting notification system"}],
+      "Care Workflow & EHR Integration": [{"text": "Auto-capture of vitals into the patient's EHR"}, {"text": "Central station monitoring for ICU nurses"}],
+      "Data Privacy (PHI / HIPAA / GDPR)": [{"text": "Intra-hospital secure network isolation"}, {"text": "Restricted access to sensitive critical care data"}],
+      "Compliance & FDA Regulatory": [{"text": "FDA Class II for clinical monitoring system"}, {"text": "IEC 60601-1-8 alarm system standards"}],
+      "Clinical Decision Support (CDS)": [{"text": "Sepsis early warning system (SEWS)"}, {"text": "Clinical prediction for extubation readiness"}],
+      "Stakeholders (Care Teams/IT)": [{"text": "Intensivists and ICU Nursing leads"}, {"text": "Biomedical engineering department"}],
+      "Implementation Roadmap": [{"text": "Device driver development"}, {"text": "Initial ICU ward pilot"}]
+    },
+    "compliance": ["FDA Class II", "IEC 60601", "HIPAA"],
+    "tags": ["icu", "monitoring", "vitals", "critical-care"]
+  },
+  {
+    "id": "health_004",
+    "domain": "healthcare",
+    "project_name": "Pharmacy Management System",
+    "industry": "Pharmacy",
+    "requirements": [
+      "The system shall manage drug inventory with real-time stock levels.",
+      "Dispensing module must verify the drug against the e-prescription.",
+      "Automatic drug interaction checks must run for every newly filled script.",
+      "The system must facilitate DEA-compliant tracking for controlled substances.",
+      "Insurance claim adjudication shall happen instantly at the point of sale.",
+      "Pharmacies must be able to manage multiple locations from one dashboard.",
+      "Automatic refill reminders shall be sent to patients via SMS.",
+      "Barcode scanning must be used at every step of the filling process.",
+      "The system shall generate daily narcotics disposal reports.",
+      "Integration with state PDMP databases for controlled substance history.",
+      "Patient education sheets must be printed automatically with every drug.",
+      "Compound pharmacy capabilities must support manual formula entry."
+    ],
+    "nfrs": [
+      "All controlled substance data must have tamper-proof audit trails.",
+      "The system must handle 10,000 prescriptions per day per location.",
+      "Point of sale transactions must complete in less than 5 seconds.",
+      "Offline mode must allow critical dispensing if the internet fails."
+    ],
+    "domain_sections": {
+      "Clinical Requirements": [{"text": "Clinical pharmacology database integration"}, {"text": "Dosing verification for pediatric patients"}],
+      "Patient Safety & Risk Mitigation": [{"text": "Look-alike/Sound-alike drug name warnings"}, {"text": "Allergy cross-sensitivity checking"}],
+      "Care Workflow & EHR Integration": [{"text": "Surescripts integration for e-prescribing"}, {"text": "Hospital EHR medication reconciliation sync"}],
+      "Data Privacy (PHI / HIPAA / GDPR)": [{"text": "PHI masking on public-facing pharmacy screens"}, {"text": "Pharmacist-only access to patient health history"}],
+      "Compliance & FDA Regulatory": [{"text": "DEA 222 form electronic processing"}, {"text": "Track and trace (DSCSA) compliance"}],
+      "Clinical Decision Support (CDS)": [{"text": "Pharmacogenomics interaction alerts"}, {"text": "Drug-food interaction warnings"}],
+      "Stakeholders (Care Teams/IT)": [{"text": "Director of Pharmacy"}, {"text": "Compliance Officer for State Boards"}],
+      "Implementation Roadmap": [{"text": "Inventory database migration"}, {"text": "Surescripts certification phase"}]
+    },
+    "compliance": ["HIPAA", "DEA", "DSCSA"],
+    "tags": ["pharmacy", "drug-inventory", "prescription", "compliance"]
+  },
+  {
+    "id": "health_005",
+    "domain": "healthcare",
+    "project_name": "Clinical Trial Management",
+    "industry": "Pharmaceuticals",
+    "requirements": [
+      "The system must track patient enrollment and screening against criteria.",
+      "Clinical protocol adherence shall be monitored via electronic checklists.",
+      "Adverse event reporting must be immediate and follow regulatory paths.",
+      "The platform must support Electronic Data Capture (EDC) from study sites.",
+      "Statistical analysis plans must be integrated for automated reports.",
+      "The system shall follow FDA 21 CFR Part 11 for electronic records.",
+      "Randomization and trial supply management (RTSM) must be automated.",
+      "Monitors shall have a dashboard for site progress and data queries.",
+      "Patient-reported outcomes (ePRO) shall be captured via mobile app.",
+      "The platform must support multi-center and global trial coordination.",
+      "Audit trail must include reason for any clinical data change.",
+      "System shall facilitate regulatory submission and eDMS integration."
+    ],
+    "nfrs": [
+      "Clinical data must be immutable once the trial is locked.",
+      "21 CFR Part 11 compliance for electronic signatures is mandatory.",
+      "System must maintain high availability for critical safety monitoring.",
+      "Global compliance with ICH-GCP standards is required everywhere."
+    ],
+    "domain_sections": {
+      "Clinical Requirements": [{"text": "Scientific protocol validation logic"}, {"text": "Endpoint data collection and analysis"}],
+      "Patient Safety & Risk Mitigation": [{"text": "pharmacovigilance monitoring systems"}, {"text": "Immediate SAE (Serious Adverse Event) escalation"}],
+      "Care Workflow & EHR Integration": [{"text": "Source Data Verification (SDV) tracking"}, {"text": "Lab data import from specialized core labs"}],
+      "Data Privacy (PHI / HIPAA / GDPR)": [{"text": "Double-blind data security controls"}, {"text": "GDPR-compliant subjects' right to erasure for clinical data"}],
+      "Compliance & FDA Regulatory": [{"text": "FDA 21 CFR Part 11 electronic signature validation"}, {"text": "ICH-GCP training record verification"}],
+      "Clinical Decision Support (CDS)": [{"text": "Patient eligibility screening automation"}, {"text": "Dose optimization based on phase parameters"}],
+      "Stakeholders (Care Teams/IT)": [{"text": "Principal Investigator (PI)"}, {"text": "Sponsor Clinical Operations Team"}],
+      "Implementation Roadmap": [{"text": "Site recruitment starts"}, {"text": "First Patient In (FPI) milestone"}]
+    },
+    "compliance": ["FDA 21 CFR 11", "ICH-GCP", "GDPR", "HIPAA"],
+    "tags": ["clinical-trials", "pharmaceuticals", "fda", "edc"]
+  }
+]

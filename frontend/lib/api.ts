@@ -1,10 +1,11 @@
 import { BRDState, HealthResponse, ModelStats, ExtractionEvent } from './types';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'; // Target backend directly to avoid SSE buffering in proxy
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8000'; // Direct to backend
 
 export interface ExtractBRDParams {
   text: string;
   sourceType: 'email' | 'meeting' | 'chat' | 'document';
+  domain: 'software' | 'healthcare' | 'mechanical' | 'business';
   onEvent: (event: ExtractionEvent) => void;
   onError: (error: string) => void;
   onDone: (finalState: BRDState) => void;
@@ -47,7 +48,8 @@ const mapBackendToFrontendState = (raw: any): BRDState => {
        id: r.name,
        name: r.name,
        role: r.role,
-       impact: r.influence_score > 0.8 ? 'High' : 'Medium'
+       impact: r.influence_score > 0.8 ? 'High' : 'Medium',
+       sentiment: r.sentiment || 'neutral'
     })),
     decisions: (raw.decisions || []).map((r: any) => ({
        id: r.id,
@@ -87,25 +89,33 @@ const mapBackendToFrontendState = (raw: any): BRDState => {
       tokensProcessed: raw.analytics.total_sentences_classified || 0
     } : null,
     pipeline: [],
+    domain: raw.domain || 'software',
+    domain_data: raw.domain_data || null,
+    sourceMap: raw.source_map || {},
+    sentiment_metrics: raw.sentiment_metrics || null,
+    summary_labels: raw.summary_labels || null,
     logs: [],
     isExtracting: false,
-    error: null
+    error: null,
+    suggestions: raw.suggestions || [],
+    matched_brds: raw.matched_brds || [],
+    suggestion_count: raw.suggestion_count || 0
   };
 };
 
 export const getDemo = async (): Promise<BRDState> => {
-  const res = await fetch(`${API_BASE_URL}/api/demo`);
+  const res = await fetch('http://127.0.0.1:8000/api/demo');
   if (!res.ok) throw new Error('Failed to fetch demo data');
   const raw = await res.json();
   return mapBackendToFrontendState(raw);
 };
 
-export const extractBRD = async ({ text, sourceType, onEvent, onError, onDone }: ExtractBRDParams) => {
+export const extractBRD = async ({ text, sourceType, domain, onEvent, onError, onDone }: ExtractBRDParams) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/api/extract`, {
+    const response = await fetch('http://127.0.0.1:8000/api/extract', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text, source_type: sourceType }),
+      body: JSON.stringify({ text, source_type: sourceType, domain }),
     });
 
     if (!response.ok) {

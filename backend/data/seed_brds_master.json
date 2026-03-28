@@ -1,0 +1,1743 @@
+[
+  [
+    {
+      "id": "biz_001",
+      "domain": "business",
+      "project_name": "CRM Implementation",
+      "industry": "Sales & Marketing",
+      "requirements": [
+        "The CRM must unify customer data from three existing legacy systems.",
+        "Sales representatives must be able to track deal flow and pipeline.",
+        "Real-time dashboards for sales performance shall include revenue forecasting.",
+        "The system must automate lead assignment based on territory and product.",
+        "Integration with corporate email (Outlook) and calendar is required.",
+        "Customer 360 view shall include previous purchases and support tickets.",
+        "Mobile access for field sales must support offline data entry.",
+        "Automated marketing campaigns must allow personalized lead nurturing.",
+        "ROI target of 15% increase in conversion rates over 12 months.",
+        "Customer support case management must include SLA tracking.",
+        "Self-service portal shall allow customers to update their own contact info.",
+        "System must support multi-currency and multi-language for global sales."
+      ],
+      "nfrs": [
+        "Privacy compliance with GDPR and CCPA is a non-negotiable requirement.",
+        "The system must handle 500 concurrent users without performance lag.",
+        "Data availability must be 99.9% with geographically distributed servers.",
+        "Transition from legacy to CRM must be completed within 6 months."
+      ],
+      "domain_sections": {
+        "Market Entry Strategy": [
+          {
+            "text": "Pilot launch in European market (GDPR focus)"
+          },
+          {
+            "text": "Expansion to APAC following success"
+          }
+        ],
+        "Business Objectives & KPIs": [
+          {
+            "text": "Targeting 20% increase in lead velocity"
+          },
+          {
+            "text": "Lower customer churn rate by 5%"
+          }
+        ],
+        "ROI & Financial Projections": [
+          {
+            "text": "Initial investment of $500k"
+          },
+          {
+            "text": "Projected ROI within 18 months"
+          }
+        ],
+        "Strategic Risk & Mitigation": [
+          {
+            "text": "Data migration risk management"
+          },
+          {
+            "text": "Executive sponsorship from VP of Sales"
+          }
+        ],
+        "Market Drivers & Competition": [
+          {
+            "text": "Replacing fragmented Excel-based tracking"
+          },
+          {
+            "text": "Better competitive intelligence gathering"
+          }
+        ],
+        "Operational Requirements": [
+          {
+            "text": "Cloud-based SaaS deployment model"
+          },
+          {
+            "text": "Dedicated customer success manager"
+          }
+        ],
+        "Regulatory & Compliance": [
+          {
+            "text": "GDPR compliance for European data"
+          },
+          {
+            "text": "SOC2 security certification for vendor"
+          }
+        ],
+        "Strategic Roadmap": [
+          {
+            "text": "Legacy data cleanup phase"
+          },
+          {
+            "text": "Core module rollout by Q2"
+          }
+        ]
+      },
+      "compliance": [
+        "GDPR",
+        "CCPA",
+        "SOX"
+      ],
+      "tags": [
+        "crm",
+        "sales",
+        "enterprise",
+        "roi"
+      ]
+    },
+    {
+      "id": "biz_002",
+      "domain": "business",
+      "project_name": "ERP Rollout",
+      "industry": "Manufacturing",
+      "requirements": [
+        "The ERP system must integrate finance, procurement, and inventory.",
+        "Automatic journal entry creation for every AP/AR transaction.",
+        "Production planning module must consider machine and labor capacity.",
+        "Inventory levels across all 5 warehouses must stay synced in real-time.",
+        "The procurement module shall automate RFQ and PO processing.",
+        "Financial consolidation for three subsidiaries must be automated.",
+        "The system shall facilitate SOX compliance for audit tracking.",
+        "Cost accounting must support standard, average, and FIFO methods.",
+        "Strategic vendor management module shall track performance and quality.",
+        "The system must support payroll processing for 2,000 employees.",
+        "Real-time cash flow statements must be available for leadership.",
+        "E-invoicing with government portals must be supported (compliance)."
+      ],
+      "nfrs": [
+        "System must support 1,000 concurrent internal users in manufacturing.",
+        "Disaster recovery must ensure zero data loss during failed failover.",
+        "Initial implementation timeline must not exceed 18 months.",
+        "The user interface must be localized into French, Spanish, and German."
+      ],
+      "domain_sections": {
+        "Market Entry Strategy": [
+          {
+            "text": "Consolidation of internal manufacturing siloes"
+          },
+          {
+            "text": "Global ERP standard for all M&A targets"
+          }
+        ],
+        "Business Objectives & KPIs": [
+          {
+            "text": "Reduce monthly close time from 10 to 4 days"
+          },
+          {
+            "text": "Inventory carrying cost reduction of 10%"
+          }
+        ],
+        "ROI & Financial Projections": [
+          {
+            "text": "$5M CAPEX for global rollout"
+          },
+          {
+            "text": "Annual operational savings of $1M"
+          }
+        ],
+        "Strategic Risk & Mitigation": [
+          {
+            "text": "Legacy system retirement plan"
+          },
+          {
+            "text": "User adoption strategy and training module"
+          }
+        ],
+        "Market Drivers & Competition": [
+          {
+            "text": "Moving to Just-in-Time (JIT) manufacturing"
+          },
+          {
+            "text": "Increasing supply chain transparency"
+          }
+        ],
+        "Operational Requirements": [
+          {
+            "text": "Hybrid cloud deployment strategy"
+          },
+          {
+            "text": "24/7 internal ERP support desk"
+          }
+        ],
+        "Regulatory & Compliance": [
+          {
+            "text": "SOX compliance controls for financial reporting"
+          },
+          {
+            "text": "Environmental reporting (ESG) integration"
+          }
+        ],
+        "Strategic Roadmap": [
+          {
+            "text": "Finance module go-live first"
+          },
+          {
+            "text": "Global warehouse rollout secondary"
+          }
+        ]
+      },
+      "compliance": [
+        "SOX",
+        "IFRS",
+        "GDPR"
+      ],
+      "tags": [
+        "erp",
+        "manufacturing",
+        "finance",
+        "enterprise"
+      ]
+    },
+    {
+      "id": "biz_003",
+      "domain": "business",
+      "project_name": "Supply Chain Optimization",
+      "industry": "Logistics & Supply Chain",
+      "requirements": [
+        "Vendor portal must allow suppliers to update their own shipment status.",
+        "Procurement workflow shall require three-tier approval for orders >$50k.",
+        "KPI dashboards must track on-time delivery and supplier quality.",
+        "The system must integrate with major shipping carriers via EDI/API.",
+        "AI-driven demand forecasting shall use historical sales data.",
+        "Warehouse management module must optimize pick paths for efficiency.",
+        "Route optimization for the delivery fleet must update daily.",
+        "Inventory tracking shall use RFID technology for asset management.",
+        "The system must support automated stock replenishment based on safety stock.",
+        "Risk assessment engine shall flag potential weather or strike delays.",
+        "Environment tracking (ESG) for delivery emissions is required.",
+        "Supplier scorecarding must be accessible to procurement managers."
+      ],
+      "nfrs": [
+        "Global visibility of all shipments must be updated every 30 minutes.",
+        "The system must handle 10,000 orders per day during peak seasons.",
+        "Cybersecurity for vendor data must be audited annually.",
+        "Vendor portal must support all modern browsers and mobile devices."
+      ],
+      "domain_sections": {
+        "Market Entry Strategy": [
+          {
+            "text": "Optimization of nationwide logistics network"
+          },
+          {
+            "text": "Integration of 200+ global suppliers"
+          }
+        ],
+        "Business Objectives & KPIs": [
+          {
+            "text": "15% reduction in transportation costs"
+          },
+          {
+            "text": "Inventory turnover increase by 2x"
+          }
+        ],
+        "ROI & Financial Projections": [
+          {
+            "text": "Projected annual savings of $2.5M"
+          },
+          {
+            "text": "Efficiency gains worth $500k in labor costs"
+          }
+        ],
+        "Strategic Risk & Mitigation": [
+          {
+            "text": "Cybersecurity for external vendor access"
+          },
+          {
+            "text": "Supply chain resilience and redundancy plan"
+          }
+        ],
+        "Market Drivers & Competition": [
+          {
+            "text": "Reducing lead times to compete with Amazon"
+          },
+          {
+            "text": "Transitioning to real-time supply chain monitoring"
+          }
+        ],
+        "Operational Requirements": [
+          {
+            "text": "AWS-based cloud infrastructure"
+          },
+          {
+            "text": "API-first integration architecture"
+          }
+        ],
+        "Regulatory & Compliance": [
+          {
+            "text": "Global customs and tariff database update"
+          },
+          {
+            "text": "Conflict minerals supply chain tracking"
+          }
+        ],
+        "Strategic Roadmap": [
+          {
+            "text": "RFID pilot in central warehouse"
+          },
+          {
+            "text": "Full carrier integration rollout"
+          }
+        ]
+      },
+      "compliance": [
+        "ISO 28000",
+        "GDPR",
+        "SOX"
+      ],
+      "tags": [
+        "supply-chain",
+        "logistics",
+        "procurement",
+        "kpi"
+      ]
+    },
+    {
+      "id": "biz_004",
+      "domain": "business",
+      "project_name": "Customer Loyalty Program",
+      "industry": "Retail & Consumer",
+      "requirements": [
+        "Points engine must calculate rewards based on purchase value and tier.",
+        "Tier management shall support Silver, Gold, and Platinum levels.",
+        "Redemption catalog must be accessible via mobile app and web.",
+        "Personalized offers shall be sent via push notifications and email.",
+        "Integration with in-store POS (Point of Sale) systems is mandatory.",
+        "Analytics dashboard for marketing must show engagement metrics.",
+        "Partnership module must allow points to be earned at allied brands.",
+        "Fraud detection system shall flag unusual points redemption patterns.",
+        "Birthday and anniversary bonus points must be automated.",
+        "The system must support gift card purchase and points transfer.",
+        "Member support dashboard must show full history of engagement.",
+        "Referral program shall reward users for successful new sign-ups."
+      ],
+      "nfrs": [
+        "Data privacy for member profiles must follow GDPR and CCPA.",
+        "System must support 5 million active users with low latency.",
+        "Points calculations must be completed within 2 seconds of purchase.",
+        "Platform must be scalable to handle holiday and Black Friday surges."
+      ],
+      "domain_sections": {
+        "Market Entry Strategy": [
+          {
+            "text": "Rollout to North American retail stores first"
+          },
+          {
+            "text": "Digital-only launch for online customers"
+          }
+        ],
+        "Business Objectives & KPIs": [
+          {
+            "text": "Targeting 30% increase in repeat purchase rate"
+          },
+          {
+            "text": "Average basket size growth of 10%"
+          }
+        ],
+        "ROI & Financial Projections": [
+          {
+            "text": "Incremental revenue projection of $10M"
+          },
+          {
+            "text": "Customer acquisition cost (CAC) reduction"
+          }
+        ],
+        "Strategic Risk & Mitigation": [
+          {
+            "text": "Program cannibalization risk monitoring"
+          },
+          {
+            "text": "Data security and privacy compliance officer"
+          }
+        ],
+        "Market Drivers & Competition": [
+          {
+            "text": "Matching competitors' personalized reward offerings"
+          },
+          {
+            "text": "Enhancing customer emotional loyalty"
+          }
+        ],
+        "Operational Requirements": [
+          {
+            "text": "Managed cloud database for scale"
+          },
+          {
+            "text": "Third-party loyalty API integration"
+          }
+        ],
+        "Regulatory & Compliance": [
+          {
+            "text": "Consumer privacy laws compliance"
+          },
+          {
+            "text": "Tax implications of points-based rewards"
+          }
+        ],
+        "Strategic Roadmap": [
+          {
+            "text": "Mobile app loyalty integration"
+          },
+          {
+            "text": "Tiered reward system launch Q3"
+          }
+        ]
+      },
+      "compliance": [
+        "GDPR",
+        "CCPA",
+        "PCI-DSS"
+      ],
+      "tags": [
+        "loyalty",
+        "retail",
+        "marketing",
+        "points"
+      ]
+    },
+    {
+      "id": "biz_005",
+      "domain": "business",
+      "project_name": "Digital Banking Platform",
+      "industry": "Finance & Fintech",
+      "requirements": [
+        "Account management must allow users to view balances and transactions.",
+        "Transaction limits must be configurable at the card and account level.",
+        "The system shall facilitate AML (Anti-Money Laundering) compliance checks.",
+        "Open banking API integration must follow PSD2 regulations.",
+        "Security features must include biometric login and device binding.",
+        "Real-time fraud detection shall flag suspicious cross-border transfers.",
+        "Push notifications must alert users of every debit/credit event.",
+        "Internal bank admin panel must monitor system health and liquidity.",
+        "Support for instant SEPA and international SWIFT transfers.",
+        "Automated credit scoring algorithm for instant loan applications.",
+        "Customers shall be able to open accounts digitally via e-KYC.",
+        "Customer support chat must be integrated directly into the app."
+      ],
+      "nfrs": [
+        "System must maintain 99.999% availability for financial services.",
+        "End-to-end encryption for all financial messages is mandatory.",
+        "System must comply with PCI-DSS and national banking regulations.",
+        "Core banking processing must handle 50,000 transactions per second."
+      ],
+      "domain_sections": {
+        "Market Entry Strategy": [
+          {
+            "text": "Fintech startup launch in EU (PSD2 focus)"
+          },
+          {
+            "text": "Neobanking expansion into North America"
+          }
+        ],
+        "Business Objectives & KPIs": [
+          {
+            "text": "Targeting 1 million active accounts in 24 months"
+          },
+          {
+            "text": "Cost per transaction under $0.05"
+          }
+        ],
+        "ROI & Financial Projections": [
+          {
+            "text": "Series A funding allocation of $20M"
+          },
+          {
+            "text": "Breakeven projected in Year 3"
+          }
+        ],
+        "Strategic Risk & Mitigation": [
+          {
+            "text": "Regulatory change risk management"
+          },
+          {
+            "text": "Cybersecurity threat mitigation strategy"
+          }
+        ],
+        "Market Drivers & Competition": [
+          {
+            "text": "Capitalizing on the shift to branchless banking"
+          },
+          {
+            "text": "Offer better FX rates than traditional banks"
+          }
+        ],
+        "Operational Requirements": [
+          {
+            "text": "High-security financial cloud deployment"
+          },
+          {
+            "text": "DevSecOps banking operations team"
+          }
+        ],
+        "Regulatory & Compliance": [
+          {
+            "text": "PSD2 compliance for European open banking"
+          },
+          {
+            "text": "FATCA and global tax reporting"
+          }
+        ],
+        "Strategic Roadmap": [
+          {
+            "text": "Consumer account launch first"
+          },
+          {
+            "text": "Business and investment modules in Year 2"
+          }
+        ]
+      },
+      "compliance": [
+        "PSD2",
+        "PCI-DSS",
+        "GDPR",
+        "FINRA"
+      ],
+      "tags": [
+        "fintech",
+        "banking",
+        "finance",
+        "compliance"
+      ]
+    }
+  ],
+  [
+    {
+      "id": "health_001",
+      "domain": "healthcare",
+      "project_name": "Patient Portal",
+      "industry": "Healthcare IT",
+      "requirements": [
+        "The portal must allow patients to book appointments based on doctor availability.",
+        "Patients shall be able to view their medical history and test results.",
+        "Prescription refill requests must be sent directly to the pharmacy.",
+        "The system must notify patients for upcoming health screenings.",
+        "Access to the portal must require multi-factor authentication for PHI.",
+        "All medical records shall be stored in a FHIR-compliant format.",
+        "Waitlist alerts shall notify patients of earlier slot availability.",
+        "The dashboard must display a summary of current medications and dosages.",
+        "Patients shall be able to message their providers securely via the app.",
+        "Billing statements must include clear itemized insurance coverage details.",
+        "The system shall support proxy access for legal guardians and caregivers.",
+        "Vitals data from wearables must be synced into the patient record."
+      ],
+      "nfrs": [
+        "Patient data privacy must strictly follow HIPAA/HITECH regulations.",
+        "All PHI must be encrypted using AES-256 for data at rest.",
+        "The portal shall load patient records in under 3 seconds over 4G.",
+        "Audit logs must record every access to sensitive health information."
+      ],
+      "domain_sections": {
+        "Clinical Requirements": [
+          {
+            "text": "Support for clinical outcome tracking"
+          },
+          {
+            "text": "Integrated lab result visualization"
+          }
+        ],
+        "Patient Safety & Risk Mitigation": [
+          {
+            "text": "Automated drug interaction alerts"
+          },
+          {
+            "text": "Patient fall risk assessment indicators"
+          }
+        ],
+        "Care Workflow & EHR Integration": [
+          {
+            "text": "Bidirectional sync with Epic and Cerner EHRs"
+          },
+          {
+            "text": "Provider dashboard for clinical task management"
+          }
+        ],
+        "Data Privacy (PHI / HIPAA / GDPR)": [
+          {
+            "text": "HIPAA-compliant data de-identification for research"
+          },
+          {
+            "text": "Granular user permission matrix for PHI"
+          }
+        ],
+        "Compliance & FDA Regulatory": [
+          {
+            "text": "FDA Class I medical software registration"
+          },
+          {
+            "text": "Audit trail for 21 CFR Part 11 compliance"
+          }
+        ],
+        "Clinical Decision Support (CDS)": [
+          {
+            "text": "Evidence-based clinical guidelines integrated into workflow"
+          },
+          {
+            "text": "Diagnostic assistance for chronic conditions"
+          }
+        ],
+        "Stakeholders (Care Teams/IT)": [
+          {
+            "text": "Chief Medical Information Officer as sponsor"
+          },
+          {
+            "text": "IT Security team for HIPAA validation"
+          }
+        ],
+        "Implementation Roadmap": [
+          {
+            "text": "Pilot launch in Cardiology department"
+          },
+          {
+            "text": "Full hospital rollout by Q4"
+          }
+        ]
+      },
+      "compliance": [
+        "HIPAA",
+        "FHIR",
+        "HL7",
+        "GDPR"
+      ],
+      "tags": [
+        "healthcare",
+        "patient",
+        "portal",
+        "phi"
+      ]
+    },
+    {
+      "id": "health_002",
+      "domain": "healthcare",
+      "project_name": "Telemedicine Platform",
+      "industry": "Telehealth",
+      "requirements": [
+        "The platform must support high-definition video consultations.",
+        "E-prescriptions must be generated and sent electronically to pharmacies.",
+        "Patient consent forms must be digitally signed before every visit.",
+        "Insurance eligibility verification shall be automated within the app.",
+        "Waiting room dashboard shall update in real-time for providers.",
+        "Follow-up scheduling must occur immediately after the session ends.",
+        "The platform shall allow screen sharing for imaging and reports.",
+        "Providers must be able to document clinical notes during the call.",
+        "Translation services integration shall be available for multi-lingual care.",
+        "Billing events must be triggered automatically upon consultation close.",
+        "Patients shall be able to upload photos of symptoms for review.",
+        "Network quality monitoring must alert users of poor connections."
+      ],
+      "nfrs": [
+        "Video call latency must stay under 150ms for smooth clinical interaction.",
+        "Video and audio streams must be end-to-end encrypted (HIPAA).",
+        "The system must maintain 99.95% availability for urgent care calls.",
+        "Platform must be compatible with Chrome, Safari, and dedicated mobile apps."
+      ],
+      "domain_sections": {
+        "Clinical Requirements": [
+          {
+            "text": "Virtual physical exam workflows"
+          },
+          {
+            "text": "Diagnostic triage questionnaires"
+          }
+        ],
+        "Patient Safety & Risk Mitigation": [
+          {
+            "text": "Emergency protocol trigger for critical vitals"
+          },
+          {
+            "text": "Session recording policy for clinical audit"
+          }
+        ],
+        "Care Workflow & EHR Integration": [
+          {
+            "text": "Direct HL7 integration for pharmacy orders"
+          },
+          {
+            "text": "Automated clinical note drafting via AI"
+          }
+        ],
+        "Data Privacy (PHI / HIPAA / GDPR)": [
+          {
+            "text": "Private key management for video sessions"
+          },
+          {
+            "text": "Data residency in national medical clouds"
+          }
+        ],
+        "Compliance & FDA Regulatory": [
+          {
+            "text": "Medical device interoperability standards"
+          },
+          {
+            "text": "State-specific telemedicine practice rules"
+          }
+        ],
+        "Clinical Decision Support (CDS)": [
+          {
+            "text": "Symptom checker based on medical knowledge graph"
+          },
+          {
+            "text": "Real-time prescription interaction checking"
+          }
+        ],
+        "Stakeholders (Care Teams/IT)": [
+          {
+            "text": "Network of primary care physicians"
+          },
+          {
+            "text": "Compliance officer for telehealth laws"
+          }
+        ],
+        "Implementation Roadmap": [
+          {
+            "text": "Cloud infrastructure setup"
+          },
+          {
+            "text": "Beta testing with 50 providers"
+          }
+        ]
+      },
+      "compliance": [
+        "HIPAA",
+        "HL7",
+        "GDPR"
+      ],
+      "tags": [
+        "telehealth",
+        "video",
+        "eprescription",
+        "video-call"
+      ]
+    },
+    {
+      "id": "health_003",
+      "domain": "healthcare",
+      "project_name": "ICU Monitoring System",
+      "industry": "Critical Care",
+      "requirements": [
+        "The system shall display real-time vitals for all ICU patients in one view.",
+        "Audible alerts must trigger for critical heart rate and O2 fluctuations.",
+        "Nurse workflow dashboard must prioritize task lists by patient severity.",
+        "Device integration shall support monitors, ventilators, and infusion pumps.",
+        "The system must maintain a full audit trail of all clinical actions.",
+        "Shift handover reports shall be generated automatically from the system.",
+        "Trend analysis must highlight deteriorating patient conditions over 24h.",
+        "The interface must support touch-screen interaction for sterile environments.",
+        "Early Warning Scores (EWS) must be calculated and shown prominently.",
+        "Medication administration records (MAR) must sync with the pharmacy.",
+        "System shall support remote monitoring for consulting specialists.",
+        "Emergency response protocols shall be displayed on the screen during codes."
+      ],
+      "nfrs": [
+        "System failure must trigger an immediate failsafe hard-wired alarm.",
+        "Vitals data processing must maintain sub-100ms end-to-end latency.",
+        "Interface must remain readable under various hospital lighting conditions.",
+        "Local server redundancy is required for 100% vital data continuity."
+      ],
+      "domain_sections": {
+        "Clinical Requirements": [
+          {
+            "text": "Invasive hemodynamic monitoring integration"
+          },
+          {
+            "text": "Ventilator waveform analysis"
+          }
+        ],
+        "Patient Safety & Risk Mitigation": [
+          {
+            "text": "Alarm fatigue reduction algorithms"
+          },
+          {
+            "text": "Critical value reporting notification system"
+          }
+        ],
+        "Care Workflow & EHR Integration": [
+          {
+            "text": "Auto-capture of vitals into the patient's EHR"
+          },
+          {
+            "text": "Central station monitoring for ICU nurses"
+          }
+        ],
+        "Data Privacy (PHI / HIPAA / GDPR)": [
+          {
+            "text": "Intra-hospital secure network isolation"
+          },
+          {
+            "text": "Restricted access to sensitive critical care data"
+          }
+        ],
+        "Compliance & FDA Regulatory": [
+          {
+            "text": "FDA Class II for clinical monitoring system"
+          },
+          {
+            "text": "IEC 60601-1-8 alarm system standards"
+          }
+        ],
+        "Clinical Decision Support (CDS)": [
+          {
+            "text": "Sepsis early warning system (SEWS)"
+          },
+          {
+            "text": "Clinical prediction for extubation readiness"
+          }
+        ],
+        "Stakeholders (Care Teams/IT)": [
+          {
+            "text": "Intensivists and ICU Nursing leads"
+          },
+          {
+            "text": "Biomedical engineering department"
+          }
+        ],
+        "Implementation Roadmap": [
+          {
+            "text": "Device driver development"
+          },
+          {
+            "text": "Initial ICU ward pilot"
+          }
+        ]
+      },
+      "compliance": [
+        "FDA Class II",
+        "IEC 60601",
+        "HIPAA"
+      ],
+      "tags": [
+        "icu",
+        "monitoring",
+        "vitals",
+        "critical-care"
+      ]
+    },
+    {
+      "id": "health_004",
+      "domain": "healthcare",
+      "project_name": "Pharmacy Management System",
+      "industry": "Pharmacy",
+      "requirements": [
+        "The system shall manage drug inventory with real-time stock levels.",
+        "Dispensing module must verify the drug against the e-prescription.",
+        "Automatic drug interaction checks must run for every newly filled script.",
+        "The system must facilitate DEA-compliant tracking for controlled substances.",
+        "Insurance claim adjudication shall happen instantly at the point of sale.",
+        "Pharmacies must be able to manage multiple locations from one dashboard.",
+        "Automatic refill reminders shall be sent to patients via SMS.",
+        "Barcode scanning must be used at every step of the filling process.",
+        "The system shall generate daily narcotics disposal reports.",
+        "Integration with state PDMP databases for controlled substance history.",
+        "Patient education sheets must be printed automatically with every drug.",
+        "Compound pharmacy capabilities must support manual formula entry."
+      ],
+      "nfrs": [
+        "All controlled substance data must have tamper-proof audit trails.",
+        "The system must handle 10,000 prescriptions per day per location.",
+        "Point of sale transactions must complete in less than 5 seconds.",
+        "Offline mode must allow critical dispensing if the internet fails."
+      ],
+      "domain_sections": {
+        "Clinical Requirements": [
+          {
+            "text": "Clinical pharmacology database integration"
+          },
+          {
+            "text": "Dosing verification for pediatric patients"
+          }
+        ],
+        "Patient Safety & Risk Mitigation": [
+          {
+            "text": "Look-alike/Sound-alike drug name warnings"
+          },
+          {
+            "text": "Allergy cross-sensitivity checking"
+          }
+        ],
+        "Care Workflow & EHR Integration": [
+          {
+            "text": "Surescripts integration for e-prescribing"
+          },
+          {
+            "text": "Hospital EHR medication reconciliation sync"
+          }
+        ],
+        "Data Privacy (PHI / HIPAA / GDPR)": [
+          {
+            "text": "PHI masking on public-facing pharmacy screens"
+          },
+          {
+            "text": "Pharmacist-only access to patient health history"
+          }
+        ],
+        "Compliance & FDA Regulatory": [
+          {
+            "text": "DEA 222 form electronic processing"
+          },
+          {
+            "text": "Track and trace (DSCSA) compliance"
+          }
+        ],
+        "Clinical Decision Support (CDS)": [
+          {
+            "text": "Pharmacogenomics interaction alerts"
+          },
+          {
+            "text": "Drug-food interaction warnings"
+          }
+        ],
+        "Stakeholders (Care Teams/IT)": [
+          {
+            "text": "Director of Pharmacy"
+          },
+          {
+            "text": "Compliance Officer for State Boards"
+          }
+        ],
+        "Implementation Roadmap": [
+          {
+            "text": "Inventory database migration"
+          },
+          {
+            "text": "Surescripts certification phase"
+          }
+        ]
+      },
+      "compliance": [
+        "HIPAA",
+        "DEA",
+        "DSCSA"
+      ],
+      "tags": [
+        "pharmacy",
+        "drug-inventory",
+        "prescription",
+        "compliance"
+      ]
+    },
+    {
+      "id": "health_005",
+      "domain": "healthcare",
+      "project_name": "Clinical Trial Management",
+      "industry": "Pharmaceuticals",
+      "requirements": [
+        "The system must track patient enrollment and screening against criteria.",
+        "Clinical protocol adherence shall be monitored via electronic checklists.",
+        "Adverse event reporting must be immediate and follow regulatory paths.",
+        "The platform must support Electronic Data Capture (EDC) from study sites.",
+        "Statistical analysis plans must be integrated for automated reports.",
+        "The system shall follow FDA 21 CFR Part 11 for electronic records.",
+        "Randomization and trial supply management (RTSM) must be automated.",
+        "Monitors shall have a dashboard for site progress and data queries.",
+        "Patient-reported outcomes (ePRO) shall be captured via mobile app.",
+        "The platform must support multi-center and global trial coordination.",
+        "Audit trail must include reason for any clinical data change.",
+        "System shall facilitate regulatory submission and eDMS integration."
+      ],
+      "nfrs": [
+        "Clinical data must be immutable once the trial is locked.",
+        "21 CFR Part 11 compliance for electronic signatures is mandatory.",
+        "System must maintain high availability for critical safety monitoring.",
+        "Global compliance with ICH-GCP standards is required everywhere."
+      ],
+      "domain_sections": {
+        "Clinical Requirements": [
+          {
+            "text": "Scientific protocol validation logic"
+          },
+          {
+            "text": "Endpoint data collection and analysis"
+          }
+        ],
+        "Patient Safety & Risk Mitigation": [
+          {
+            "text": "pharmacovigilance monitoring systems"
+          },
+          {
+            "text": "Immediate SAE (Serious Adverse Event) escalation"
+          }
+        ],
+        "Care Workflow & EHR Integration": [
+          {
+            "text": "Source Data Verification (SDV) tracking"
+          },
+          {
+            "text": "Lab data import from specialized core labs"
+          }
+        ],
+        "Data Privacy (PHI / HIPAA / GDPR)": [
+          {
+            "text": "Double-blind data security controls"
+          },
+          {
+            "text": "GDPR-compliant subjects' right to erasure for clinical data"
+          }
+        ],
+        "Compliance & FDA Regulatory": [
+          {
+            "text": "FDA 21 CFR Part 11 electronic signature validation"
+          },
+          {
+            "text": "ICH-GCP training record verification"
+          }
+        ],
+        "Clinical Decision Support (CDS)": [
+          {
+            "text": "Patient eligibility screening automation"
+          },
+          {
+            "text": "Dose optimization based on phase parameters"
+          }
+        ],
+        "Stakeholders (Care Teams/IT)": [
+          {
+            "text": "Principal Investigator (PI)"
+          },
+          {
+            "text": "Sponsor Clinical Operations Team"
+          }
+        ],
+        "Implementation Roadmap": [
+          {
+            "text": "Site recruitment starts"
+          },
+          {
+            "text": "First Patient In (FPI) milestone"
+          }
+        ]
+      },
+      "compliance": [
+        "FDA 21 CFR 11",
+        "ICH-GCP",
+        "GDPR",
+        "HIPAA"
+      ],
+      "tags": [
+        "clinical-trials",
+        "pharmaceuticals",
+        "fda",
+        "edc"
+      ]
+    }
+  ],
+  [
+    {
+      "id": "mech_001",
+      "domain": "mechanical",
+      "project_name": "Industrial Valve Assembly",
+      "industry": "Oil & Gas",
+      "requirements": [
+        "The valve body must be made from 316 stainless steel for corrosion resistance.",
+        "The assembly must handle a maximum pressure of 500 PSI.",
+        "Compliance with ASME B16.34 is required for high-pressure service.",
+        "O-rings must be Viton-brand to withstand temperatures up to 200\u00c2\u00b0C.",
+        "Valve shall have a fail-safe closed mechanism on loss of air pressure.",
+        "The stem packing shall be adjustable without disassembly.",
+        "Body thickness must meet minimum ASME wall thickness calculations.",
+        "NPT threaded ends must match standard pipe fit specifications.",
+        "External surfaces shall be powder-coated for atmospheric protection.",
+        "Leakage rate must not exceed API 6D tight shutoff standards.",
+        "Lifting eyes must be integrated for crane-based installation.",
+        "The handle shall be padlockable in both open and closed positions."
+      ],
+      "nfrs": [
+        "Valve must operate for 50,000 cycles without significant seal fatigue.",
+        "Safety factor of 1.5x must be applied to all pressure-bearing walls.",
+        "Component must fit within a 300mm x 300mm envelope.",
+        "Design must be documented in STEP and DWG CAD formats."
+      ],
+      "domain_sections": {
+        "Mechanical Design Specifications": [
+          {
+            "text": "High-pressure seal design"
+          },
+          {
+            "text": "Modular actuator coupling"
+          }
+        ],
+        "Material Properties & Stress Analysis": [
+          {
+            "text": "S-N curve for fatigue analysis"
+          },
+          {
+            "text": "Yield strength verification for 316 SS"
+          }
+        ],
+        "Manufacturing & Assembly (DFM/DFA)": [
+          {
+            "text": "Designed for CNC milling"
+          },
+          {
+            "text": "Automated bolt tensioning for assembly"
+          }
+        ],
+        "Tolerances & Precision Metrics": [
+          {
+            "text": "Seat flatness to 0.005mm"
+          },
+          {
+            "text": "Dimensional tolerance of +/- 0.1mm"
+          }
+        ],
+        "Safety Factors & Structural Integrity": [
+          {
+            "text": "Burst pressure rating at 2,000 PSI"
+          },
+          {
+            "text": "FEA validation of stress concentrations"
+          }
+        ],
+        "Environmental Operating Conditions": [
+          {
+            "text": "Offshore saltwater environment"
+          },
+          {
+            "text": "Operating range -20C to 200C"
+          }
+        ],
+        "BOM (Bill of Materials) Constraints": [
+          {
+            "text": "Standard ASTM materials only"
+          },
+          {
+            "text": "No conflict minerals in raw parts"
+          }
+        ],
+        "Project Timeline & Prototyping": [
+          {
+            "text": "First article inspection in Q2"
+          },
+          {
+            "text": "Pilot run of 100 units by Q3"
+          }
+        ]
+      },
+      "compliance": [
+        "ASME B16.34",
+        "API 6D",
+        "ISO 9001"
+      ],
+      "tags": [
+        "valve",
+        "oilandgas",
+        "stainless",
+        "pressure"
+      ]
+    },
+    {
+      "id": "mech_002",
+      "domain": "mechanical",
+      "project_name": "Automotive Brake Caliper",
+      "industry": "Automotive",
+      "requirements": [
+        "The caliper must be manufactured via aluminum die-casting for weight.",
+        "Fatigue testing shall exceed 1 million cycles at peak pedal force.",
+        "Surface finish must be anodized to prevent galvanic corrosion.",
+        "Hydraulic seals must meet SAE J1603 material specifications.",
+        "Bleed valves shall be accessible from a standard mechanic position.",
+        "The caliper must support ventilated rotor thicknesses from 20-25mm.",
+        "Mounting bolt pattern shall follow Euro-standard SUV specifications.",
+        "Brake pad replacement must be possible without removing the caliper body.",
+        "Heat dissipation fins must be integrated into the hydraulic housing.",
+        "The assembly shall include integrated wear sensors.",
+        "Pistons must be hard-chrome plated for low-friction operation.",
+        "Maximum deflection under full load shall not exceed 0.2mm."
+      ],
+      "nfrs": [
+        "Total weight of the caliper must not exceed 2.5kg.",
+        "Design must meet SAE J1153 brake performance standards.",
+        "Thermal expansion must be managed for stable braking at 500\u00c2\u00b0C.",
+        "Salt spray resistance shall be tested per ISO 9227 standards."
+      ],
+      "domain_sections": {
+        "Mechanical Design Specifications": [
+          {
+            "text": "Four-piston opposed configuration"
+          },
+          {
+            "text": "High-strength alloy steel mounting brackets"
+          }
+        ],
+        "Material Properties & Stress Analysis": [
+          {
+            "text": "Von Mises stress validation"
+          },
+          {
+            "text": "High-temperature seal compression sets"
+          }
+        ],
+        "Manufacturing & Assembly (DFM/DFA)": [
+          {
+            "text": "Precision machining of piston bores"
+          },
+          {
+            "text": "Robotic assembly of seal tracks"
+          }
+        ],
+        "Tolerances & Precision Metrics": [
+          {
+            "text": "Bore diameter tolerance of H7"
+          },
+          {
+            "text": "Piston clearance of 0.05 +/- 0.01mm"
+          }
+        ],
+        "Safety Factors & Structural Integrity": [
+          {
+            "text": "Factor of Safety for fatigue life of 2.0"
+          },
+          {
+            "text": "Vibration isolation from wheel hub"
+          }
+        ],
+        "Environmental Operating Conditions": [
+          {
+            "text": "Operating range -40C to 700C (at disc)"
+          },
+          {
+            "text": "Extreme road salt and moisture exposure"
+          }
+        ],
+        "BOM (Bill of Materials) Constraints": [
+          {
+            "text": "Non-asbestos brake pad materials"
+          },
+          {
+            "text": "Traceability for all casting batches"
+          }
+        ],
+        "Project Timeline & Prototyping": [
+          {
+            "text": "Dyno testing in Q1"
+          },
+          {
+            "text": "Track testing on prototype vehicle"
+          }
+        ]
+      },
+      "compliance": [
+        "SAE J1603",
+        "ISO 9001",
+        "IATF 16949"
+      ],
+      "tags": [
+        "automotive",
+        "braking",
+        "mechanical",
+        "safety"
+      ]
+    },
+    {
+      "id": "mech_003",
+      "domain": "mechanical",
+      "project_name": "HVAC Compressor Unit",
+      "industry": "Commercial HVAC",
+      "requirements": [
+        "The compressor must be a scroll-type for quiet commercial operation.",
+        "Vibration isolators shall reduce noise transmission to less than 65dB.",
+        "Thermal overload protection must be built-in with automatic reset.",
+        "Compressor must be compatible with R-410A and R-32 refrigerants.",
+        "Liquid-injection cooling shall be used for high-ambient operations.",
+        "The unit shall include an integrated sight glass for oil level check.",
+        "Connection ports must be brazed copper for leak-free sealing.",
+        "Compressor motor shall be variable-speed for energy efficiency.",
+        "System must support vertical and horizontal mounting configuration.",
+        "Internal pressure relief valve shall trigger at 650 PSI.",
+        "Crankcase heater must prevent liquid slugging during cold starts.",
+        "Inlet and outlet shall include integrated service valves."
+      ],
+      "nfrs": [
+        "Energy Efficiency Ratio (EER) must exceed 12.0.",
+        "Unit shall have a design life of 15 years under normal duty.",
+        "Maximum weight must allow for rooftop crane placement.",
+        "Corrosion-resistant coating must pass 1000-hour ASTM B117 salt spray."
+      ],
+      "domain_sections": {
+        "Mechanical Design Specifications": [
+          {
+            "text": "Scroll geometry optimization"
+          },
+          {
+            "text": "Low-noise discharge muffler"
+          }
+        ],
+        "Material Properties & Stress Analysis": [
+          {
+            "text": "High-tensile cast iron housing"
+          },
+          {
+            "text": "Bearing life (L10) calculation of 80k hours"
+          }
+        ],
+        "Manufacturing & Assembly (DFM/DFA)": [
+          {
+            "text": "Hermetic welding per AWS standards"
+          },
+          {
+            "text": "Automated helium leak testing"
+          }
+        ],
+        "Tolerances & Precision Metrics": [
+          {
+            "text": "Scroll wrap tolerance +/- 0.002mm"
+          },
+          {
+            "text": "Radial clearance gap control"
+          }
+        ],
+        "Safety Factors & Structural Integrity": [
+          {
+            "text": "Pressure vessel burst factor of 3.0"
+          },
+          {
+            "text": "Seismic mounting certification"
+          }
+        ],
+        "Environmental Operating Conditions": [
+          {
+            "text": "Outdoor rooftop installation"
+          },
+          {
+            "text": "Ambient range -30C to 55C"
+          }
+        ],
+        "BOM (Bill of Materials) Constraints": [
+          {
+            "text": "RoHS compliant electronics"
+          },
+          {
+            "text": "Standard refrigeration fitting sizes"
+          }
+        ],
+        "Project Timeline & Prototyping": [
+          {
+            "text": "Psychrometric lab testing"
+          },
+          {
+            "text": "Pilot manufacturing run"
+          }
+        ]
+      },
+      "compliance": [
+        "ISO 9001",
+        "UL 1995",
+        "ASHRAE"
+      ],
+      "tags": [
+        "hvac",
+        "compressor",
+        "thermal",
+        "mechanical"
+      ]
+    },
+    {
+      "id": "mech_004",
+      "domain": "mechanical",
+      "project_name": "Hydraulic Pump",
+      "industry": "Heavy Machinery",
+      "requirements": [
+        "The pump must deliver a flow rate of 100 GPM at 3,000 RPM.",
+        "Hydraulic seals must handle 5,000 PSI operating pressure.",
+        "Shaft design shall include standard SAE splines for drivetrain coupling.",
+        "Contamination resistance must meet ISO 4406 18/16/13 class.",
+        "Pump shall include an internal pressure compensator.",
+        "Porting shall use standard SAE O-ring boss (ORB) threads.",
+        "Integrated bypass valve must facilitate easy cold-start unloading.",
+        "Casing must be made of high-strength nodular cast iron.",
+        "Flow control valve shall be adjustable via a manual knob.",
+        "Pump must be compatible with biodegradable hydraulic fluids.",
+        "Inlet port must be oversized to prevent cavitation at high RPM.",
+        "Mounting flange shall be SAE B-standard with 2-bolt pattern."
+      ],
+      "nfrs": [
+        "Volumetric efficiency must be above 95% at full load.",
+        "Operating noise levels must not exceed 80dBA at 1 meter.",
+        "Pump must survive a 10g vertical shock load while operational.",
+        "Startup temperature limit must be as low as -40\u00c2\u00b0C."
+      ],
+      "domain_sections": {
+        "Mechanical Design Specifications": [
+          {
+            "text": "Variable displacement axial piston pump"
+          },
+          {
+            "text": "Pressure-compensated load-sensing control"
+          }
+        ],
+        "Material Properties & Stress Analysis": [
+          {
+            "text": "Fatigue life of driven shaft"
+          },
+          {
+            "text": "Bronze plate wear analysis"
+          }
+        ],
+        "Manufacturing & Assembly (DFM/DFA)": [
+          {
+            "text": "Precision diamond-honed cylinder bores"
+          },
+          {
+            "text": "Modular control block assembly"
+          }
+        ],
+        "Tolerances & Precision Metrics": [
+          {
+            "text": "Piston-to-bore clearance of 10-15 microns"
+          },
+          {
+            "text": "Shaft runout less than 0.05mm"
+          }
+        ],
+        "Safety Factors & Structural Integrity": [
+          {
+            "text": "Static pressure factor of 1.5"
+          },
+          {
+            "text": "Casing FEA for peak cyclical pulse"
+          }
+        ],
+        "Environmental Operating Conditions": [
+          {
+            "text": "Mining and construction dust exposure"
+          },
+          {
+            "text": "Heavy vibration and impact loads"
+          }
+        ],
+        "BOM (Bill of Materials) Constraints": [
+          {
+            "text": "Metric and Imperial part versions"
+          },
+          {
+            "text": "Proprietary seal material selection"
+          }
+        ],
+        "Project Timeline & Prototyping": [
+          {
+            "text": "Performance bench testing"
+          },
+          {
+            "text": "Field testing on excavator prototype"
+          }
+        ]
+      },
+      "compliance": [
+        "ISO 4406",
+        "SAE J744",
+        "ISO 9001"
+      ],
+      "tags": [
+        "hydraulic",
+        "pump",
+        "heavy-machinery",
+        "mechanical"
+      ]
+    },
+    {
+      "id": "mech_005",
+      "domain": "mechanical",
+      "project_name": "Aerospace Structural Bracket",
+      "industry": "Aerospace",
+      "requirements": [
+        "The bracket must be machined from Ti-6Al-4V titanium alloy.",
+        "Weight must be minimized using generative design and FEA lattice.",
+        "Compliance with FAA DO-160 for environmental testing is required.",
+        "Static load testing must prove no permanent deformation at limit load.",
+        "Hole locations must maintain a tolerance of +/- 0.05mm.",
+        "Surface finish must meet AS9100 aerospace standards.",
+        "The bracket shall include integrated nut-plates for blind installation.",
+        "Design must avoid all sharp edges to minimize stress risers.",
+        "All dimensions shall be verified using CMM inspection.",
+        "Material must have full traceability back to the mill batch.",
+        "Riveting pattern shall follow standard aerospace pitch rules.",
+        "Bracket must withstand temperatures from -60\u00c2\u00b0C to 150\u00c2\u00b0C."
+      ],
+      "nfrs": [
+        "Ultimate safety factor of 1.5 against rupture must be proven.",
+        "Part must be 20% lighter than its aluminum predecessor.",
+        "Design life must exceed 20,000 flight hours.",
+        "Manufacturing must utilize 5-axis CNC to minimize setup errors."
+      ],
+      "domain_sections": {
+        "Mechanical Design Specifications": [
+          {
+            "text": "Bionic structural ribbing"
+          },
+          {
+            "text": "Integrated cable management attachments"
+          }
+        ],
+        "Material Properties & Stress Analysis": [
+          {
+            "text": "Titanium Ti-6Al-4V Grade 5 specs"
+          },
+          {
+            "text": "Crack propagation life analysis"
+          }
+        ],
+        "Manufacturing & Assembly (DFM/DFA)": [
+          {
+            "text": "Additive manufacturing potential (SLM)"
+          },
+          {
+            "text": "Reduced fastener count architecture"
+          }
+        ],
+        "Tolerances & Precision Metrics": [
+          {
+            "text": "GD&T true position of 0.1mm"
+          },
+          {
+            "text": "Flatness under 0.02mm for mounting"
+          }
+        ],
+        "Safety Factors & Structural Integrity": [
+          {
+            "text": "Safety factor 1.15 (Limit) / 1.5 (Ultimate)"
+          },
+          {
+            "text": "Dynamic modal analysis to avoid resonance"
+          }
+        ],
+        "Environmental Operating Conditions": [
+          {
+            "text": "High-altitude atmospheric exposure"
+          },
+          {
+            "text": "Rapid thermal cycling"
+          }
+        ],
+        "BOM (Bill of Materials) Constraints": [
+          {
+            "text": "Approved aerospace vendor parts only"
+          },
+          {
+            "text": "KMS certification required"
+          }
+        ],
+        "Project Timeline & Prototyping": [
+          {
+            "text": "Stress test coupon validation"
+          },
+          {
+            "text": "Flight-ready unit production"
+          }
+        ]
+      },
+      "compliance": [
+        "AS9100",
+        "FAA DO-160",
+        "ISO 9001"
+      ],
+      "tags": [
+        "aerospace",
+        "titanium",
+        "structural",
+        "mechanical"
+      ]
+    }
+  ],
+  [
+    {
+      "id": "soft_001",
+      "domain": "software",
+      "project_name": "E-Commerce Platform",
+      "industry": "Retail",
+      "requirements": [
+        "The system must allow users to log in with Google and custom email accounts.",
+        "The platform shall support a persistent shopping cart for guest and logged-in users.",
+        "Inventory must be updated in real-time when an order is placed.",
+        "Users shall be able to filter products by category, price, and rating.",
+        "The layout must be fully responsive and work on mobile/tablet browser.",
+        "Order history shall be accessible from the user's dashboard.",
+        "Standard shipping and express shipping options must be available at checkout.",
+        "System shall support multiple payment gateways including Stripe and PayPal.",
+        "Admins must have a dashboard to manage users, orders, and products.",
+        "Search results shall prioritize relevant products based on keyword weight.",
+        "System shall send automated order confirmation emails to customers.",
+        "Coupons and promo codes must be validated before applying to the total."
+      ],
+      "nfrs": [
+        "Site must load in under 2 seconds for 95% of users globally.",
+        "Platform shall maintain 99.9% uptime per month excluding maintenance.",
+        "All credit card data must be handled using PCI-DSS compliant methods.",
+        "System must support up to 50,000 concurrent visitors during peak sales."
+      ],
+      "domain_sections": {},
+      "compliance": [
+        "PCI-DSS",
+        "GDPR"
+      ],
+      "tags": [
+        "ecommerce",
+        "retail",
+        "payments",
+        "shopping"
+      ]
+    },
+    {
+      "id": "soft_002",
+      "domain": "software",
+      "project_name": "HR Management System",
+      "industry": "Enterprise",
+      "requirements": [
+        "Employees must be able to view and download their monthly payslips.",
+        "The system shall allow managers to approve leave requests with one click.",
+        "The payroll module must calculate taxes automatically based on country rules.",
+        "Performance appraisals shall be scheduled annually and tracked by HR.",
+        "The org chart must be dynamically generated from data in the employee database.",
+        "Automatic notifications shall be sent for upcoming contract renewals.",
+        "Multi-level approval workflows must be configurable for expenses.",
+        "Onboarding checklists for new hires must include document upload features.",
+        "Offboarding process shall automate access revocation across IT assets.",
+        "The system must support timesheet submission and tracking per project.",
+        "Employee birthdays and work anniversaries shall be displayed on the intranet.",
+        "Internal recruitment portal must allow employees to apply for internal roles."
+      ],
+      "nfrs": [
+        "Sensitive HR data must be encrypted at rest (AES-256) and in transit (TLS 1.3).",
+        "System must integrate with existing Active Directory via SAML 2.0.",
+        "Dashboard must update in real-time as background tasks complete.",
+        "The platform must support high availability with automated disaster recovery."
+      ],
+      "domain_sections": {},
+      "compliance": [
+        "GDPR",
+        "SAML 2.0"
+      ],
+      "tags": [
+        "hr",
+        "payroll",
+        "enterprise",
+        "workforce"
+      ]
+    },
+    {
+      "id": "soft_003",
+      "domain": "software",
+      "project_name": "Learning Management System",
+      "industry": "Education",
+      "requirements": [
+        "Instructors must be able to upload video lectures in MP4 and AVI formats.",
+        "The system shall support quizzes with multiple choice and short answer questions.",
+        "Certificates must be automatically generated upon course completion.",
+        "Students shall be able to track their progress through course modules.",
+        "The discussion forum must support threaded comments and user tagging.",
+        "System shall allow instructors to set prerequisites for specific courses.",
+        "Mobile app synchronization must ensure offline progress is saved when reconnected.",
+        "Admins must be able to generate reports on student enrollment and grades.",
+        "Course feedback surveys shall be triggered at the end of each module.",
+        "Live webinar integration with Zoom and Teams must be supported.",
+        "The resource library shall allow downloading of PDF and PPT files.",
+        "Notification engine must send reminders for upcoming quiz deadlines."
+      ],
+      "nfrs": [
+        "Video streaming must maintain quality for low-bandwidth connections via adaptive bitrate.",
+        "The system must support 100,000 active students simultaneously.",
+        "Data privacy for student records must strictly follow COPPA guidelines.",
+        "Site must achieve WCAG 2.1 Level AA accessibility standards."
+      ],
+      "domain_sections": {},
+      "compliance": [
+        "COPPA",
+        "WCAG 2.1 AA"
+      ],
+      "tags": [
+        "education",
+        "lms",
+        "elearning",
+        "video"
+      ]
+    },
+    {
+      "id": "soft_004",
+      "domain": "software",
+      "project_name": "Real Estate Listing Portal",
+      "industry": "Real Estate",
+      "requirements": [
+        "Agents must be able to upload high-resolution property images and virtual tours.",
+        "The map search feature shall display property pins using Mapbox API.",
+        "Mortgage calculator must allow users to estimate monthly payments.",
+        "Users shall be able to save favorite listings and receive price drop alerts.",
+        "The agent portal must allow agents to manage their active and sold listings.",
+        "Lead generation forms must send inquiries directly to the listing agent.",
+        "Property data shall be synced daily from Multiple Listing Services (MLS) feeds.",
+        "Advanced filtering shall include bedroom count, square footage, and school zones.",
+        "Neighborhood demographics and safety data must be shown for each property.",
+        "Users shall be able to schedule property viewings via an integrated calendar.",
+        "Blog and news section for market trends must be manageable via CMS.",
+        "System must support both residential and commercial property categories."
+      ],
+      "nfrs": [
+        "The portal must process 2 million listings with sub-second search response.",
+        "Image processing must automatically generate optimized thumbnails for speed.",
+        "Integration with Mapbox must handle 500k map tiles per month without lag.",
+        "Security audit logs must track all changes to listing data for compliance."
+      ],
+      "domain_sections": {},
+      "compliance": [
+        "ADA",
+        "Fair Housing Act"
+      ],
+      "tags": [
+        "realestate",
+        "map",
+        "listings",
+        "property"
+      ]
+    },
+    {
+      "id": "soft_005",
+      "domain": "software",
+      "project_name": "Fleet Management System",
+      "industry": "Transportation",
+      "requirements": [
+        "The system must track vehicle GPS positions in real-time on a map dashboard.",
+        "Maintenance schedules shall be automatically generated based on mileage.",
+        "Driver management module must track license expiration and driving hours.",
+        "Fuel logs shall allow drivers to record refills and track average fuel economy.",
+        "Predictive analytics must flag vehicles and parts likely to fail soon.",
+        "Route optimization shall calculate paths for least fuel consumption.",
+        "System must send urgent alerts for speeding, harsh braking, and idling.",
+        "Inventory of spare parts shall be managed with automatic low-stock alerts.",
+        "Incident reporting must allow drivers to upload photos from a mobile app.",
+        "Cost analysis reports shall show total cost of ownership per vehicle.",
+        "Integration with OBD-II devices must extract diagnostic trouble codes.",
+        "Work order management shall track mechanic task time and parts used."
+      ],
+      "nfrs": [
+        "GPS location data must be updated every 10 seconds for active vehicles.",
+        "The system must handle 5,000 active vehicles concurrently reporting data.",
+        "All driver identity data (PII) must be stored in encrypted silos.",
+        "Mobile app must function offline and sync when 4G/LTE is available."
+      ],
+      "domain_sections": {},
+      "compliance": [
+        "ELD Mandate",
+        "FMCSA"
+      ],
+      "tags": [
+        "fleet",
+        "transportation",
+        "gps",
+        "maintenance"
+      ]
+    }
+  ]
+]

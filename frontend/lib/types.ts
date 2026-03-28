@@ -20,6 +20,7 @@ export interface Stakeholder {
   name: string;
   role: string;
   impact: string;
+  sentiment?: 'positive' | 'neutral' | 'negative';
 }
 
 export interface Decision {
@@ -49,6 +50,20 @@ export interface Gap {
   suggestedAction: string;
 }
 
+export interface Suggestion {
+  text: string;
+  from_project: string;
+  domain: string;
+  confidence: number;
+  source_brd_id: string;
+}
+
+export interface MatchedBRD {
+  project_name: string;
+  domain: string;
+  similarity_score: number;
+}
+
 export interface PriorityScore {
   requirementId: string;
   impact: number;
@@ -71,7 +86,7 @@ export interface Analytics {
 }
 
 export interface PipelineStep {
-  id: 'ingest' | 'classify' | 'rag' | 'extract' | 'timeline' | 'critique' | 'score';
+  id: 'ingest' | 'classify' | 'rag' | 'extract' | 'timeline' | 'critique' | 'score' | 'domain_extractor' | 'render';
   label: string;
   status: 'idle' | 'running' | 'done' | 'error';
   timestamp?: string;
@@ -88,9 +103,25 @@ export interface BRDState {
   priorities: PriorityScore[];
   analytics: Analytics | null;
   pipeline: PipelineStep[];
+  domain: 'software' | 'healthcare' | 'mechanical' | 'business';
+  domain_data: any;
+  sourceMap?: Record<string, { start: number; end: number; text: string }>;
+  sentiment_metrics?: {
+    overall_sentiment: number;
+    positivity_ratio: number;
+  };
+  summary_labels?: {
+    card1: string;
+    card2: string;
+    card3: string;
+    card4: string;
+  };
   logs: string[];
   isExtracting: boolean;
   error: string | null;
+  suggestions?: Suggestion[];
+  matched_brds?: MatchedBRD[];
+  suggestion_count?: number;
 }
 
 export interface ModelStats {

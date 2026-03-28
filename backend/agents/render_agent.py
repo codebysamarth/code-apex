@@ -26,6 +26,14 @@ def _ensure_defaults(state: BRDState) -> BRDState:
     state.setdefault("source_map", {})
     state.setdefault("rag_examples", [])
     state.setdefault("classified_sentences", [])
+    state.setdefault("domain", "software")
+    state.setdefault("domain_data", {})
+    state.setdefault("project_name", "Untitled Project")
+    
+    # Innovation: Static labels for dashboard cards
+    from domain_configs import DOMAIN_CONFIGS
+    config = DOMAIN_CONFIGS.get(state["domain"], DOMAIN_CONFIGS["software"])
+    state["summary_labels"] = config.get("summary_labels", DOMAIN_CONFIGS["software"]["summary_labels"])
 
     scope = state.get("scope", {})
     if not isinstance(scope, dict):
@@ -49,12 +57,32 @@ def _aggregate_analytics(state: BRDState) -> dict:
     analytics["total_processing_time"] = total_time
 
     # Requirement type breakdown for pie chart
-    analytics["req_type_breakdown"] = {
-        "Functional": len(state.get("functional_reqs", [])),
-        "Non-Functional": len(state.get("nfrs", [])),
-        "Decisions": len(state.get("decisions", [])),
-        "Stakeholders": len(state.get("stakeholders", [])),
-    }
+    if state.get("domain") == "software":
+        analytics["req_type_breakdown"] = {
+            "Functional": len(state.get("functional_reqs", [])),
+            "Non-Functional": len(state.get("nfrs", [])),
+            "Decisions": len(state.get("decisions", [])),
+            "Stakeholders": len(state.get("stakeholders", [])),
+        }
+    else:
+        # For dynamic domains, count sections in domain_data
+        domain_data = state.get("domain_data", {})
+        sections = domain_data.get("sections", {})
+        
+        # Merge standard breakdown with custom sections
+        breakdown = {
+            "Functional": len(state.get("functional_reqs", [])),
+            "Non-Functional": len(state.get("nfrs", [])),
+            "Decisions": len(state.get("decisions", [])),
+            "Stakeholders": len(state.get("stakeholders", [])),
+        }
+        
+        # Add dynamic sections if not already covered
+        for name, items in sections.items():
+            if isinstance(items, list) and name not in breakdown:
+                breakdown[name] = len(items)
+                
+        analytics["req_type_breakdown"] = breakdown
 
     # Confidence distribution (from classifier agent)
     if "confidence_distribution" not in analytics:
@@ -142,6 +170,25 @@ def render_agent(state: BRDState) -> BRDState:
         state = _ensure_defaults(state)
         state = _clean_requirement_ids(state)
         state["analytics"] = _aggregate_analytics(state)
+        # --- NEW: Predictive Suggestions Section (FAISS RAG Feature 2) ---
+        if state.get("suggestions"):
+            if "domain_data" not in state or not state["domain_data"]:
+                state["domain_data"] = {"sections": {}}
+            if "sections" not in state["domain_data"]:
+                state["domain_data"]["sections"] = {}
+                
+            suggestion_items = []
+            for s in state["suggestions"]:
+                # Map fields to match domain section item expectations
+                suggestion_items.append({
+                    "title": f"Suggestion ({s['from_project']})",
+                    "description": s["text"],
+                    "priority": "Recommended" if s["confidence"] > 0.7 else "Potential",
+                    "id": s["source_brd_id"]
+                })
+                
+            state["domain_data"]["sections"]["Predictive Suggestions (FAISS RAG)"] = suggestion_items
+
         state["processing_times"]["render"] = round(time.time() - start_time, 3)
 
     except Exception as e:

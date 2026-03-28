@@ -73,5 +73,15 @@ class BRDState(TypedDict):
     # Number of pipeline retries attempted (used by should_retry logic)
     retry_count: int
 
+    # NEW: Multi-domain cognitive switch
+    domain: str  # e.g., "software", "healthcare", "mechanical", "business"
+    project_name: str
+    domain_data: dict  # Dynamic parameters based on the domain
+
+    # NEW: Predictive Suggestions (FAISS RAG Feature)
+    suggestions: list[dict]        # Predicted missing requirements from FAISS RAG
+    matched_brds: list[dict]       # Retrieved similar BRDs from FAISS (project_name, similarity, domain)
+    suggestion_count: int          # len(suggestions)
+
     # Error message if any agent fails; None on success
     error: Optional[str]

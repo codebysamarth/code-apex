@@ -1,0 +1,32 @@
+[
+  {
+    "pattern_id": "P-001",
+    "trigger_keywords": ["auth", "login", "SSO", "credential"],
+    "suggested_requirement": "The system must support Multi-Factor Authentication (MFA) for administrative access.",
+    "category": "Security"
+  },
+  {
+    "pattern_id": "P-002",
+    "trigger_keywords": ["payment", "stripe", "checkout", "transaction"],
+    "suggested_requirement": "The platform shall support automated invoice generation after every successful transaction.",
+    "category": "Financing"
+  },
+  {
+    "pattern_id": "P-003",
+    "trigger_keywords": ["HIPAA", "patient", "PHI", "medical", "treatment"],
+    "suggested_requirement": "The system must maintain an immutable audit trail for every access to Protected Health Information (PHI).",
+    "category": "Compliance"
+  },
+  {
+    "pattern_id": "P-004",
+    "trigger_keywords": ["mechanical", "pressure", "tolerance", "valve", "psi"],
+    "suggested_requirement": "Design must factor in a 1.5x minimum yield strength safety coefficient for all structural components.",
+    "category": "Safety"
+  },
+  {
+    "pattern_id": "P-005",
+    "trigger_keywords": ["revenue", "KPI", "ROI", "strategy", "market"],
+    "suggested_requirement": "The dashboard must compare actual ROI against initial financial projections on a quarterly basis.",
+    "category": "Business Analytics"
+  }
+]
