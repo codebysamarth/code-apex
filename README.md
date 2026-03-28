@@ -1,4 +1,4 @@
-# Code Apex: AI-Powered BRD Extraction Dashboard 🚀
+#BRDApex: AI-Powered BRD Extraction Dashboard 🚀
 
 Code Apex is a production-grade Requirements Engineering platform that transforms unstructured corporate communications (emails, meeting transcripts, documents) into structured **Business Requirement Documents (BRD)** using a multi-agent AI pipeline.
 
