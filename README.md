@@ -87,18 +87,3 @@ cd frontend
 npm install
 npm run dev
 ```
-
-## 🌍 Deployment & Scalability
-
-### **Should you deploy it?** 
-**Yes.** Code Apex is fully modular and follows container-friendly principles.
-
-### **Will it work completely?**
-**Absolutely.** Here is how to ensure a smooth production deployment:
-1.  **Backend Deployment**: Use platforms like **Railway, Render, or Fly.io**. Ensure you use a **persistent volume** for the `backend/faiss_store/` directory if you want the "Learning" feature to persist across redeployments.
-2.  **Frontend Deployment**: The frontend is a standard Next.js application ready for **Vercel** or **Netlify**.
-3.  **Vector Store**: While the local FAISS store works perfectly for current data, for massive scaling (millions of projects), you can easily plug in a managed vector service like Pinecone.
-4.  **AI Reliability**: The implemented **Multi-API Fallback** (configured in your `.env`) ensures the system remains "up" even if a single API key hits its throughput limit during a high-traffic demo.
-
----
-*Built for the AI Innovation Challenge / Competition*
