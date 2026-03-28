@@ -2,12 +2,41 @@
 
 Code Apex is a production-grade Requirements Engineering platform that transforms unstructured corporate communications (emails, meeting transcripts, documents) into structured **Business Requirement Documents (BRD)** using a multi-agent AI pipeline.
 
-![Architecture Diagram](./architecture_diagram.png)
-
 ## 🏗️ Project Architecture
 
 Code Apex operates on a **LangGraph-driven Multi-Agent Pipeline**. Unlike traditional linear processing, each specialized agent autonomously processes a different part of the requirement lifecycle:
 
+```mermaid
+graph TD
+    User([User]) --> Frontend[Next.js 14 Dashboard]
+    Frontend --> API[FastAPI Backend]
+    
+    subgraph "LangGraph Extraction Pipeline"
+        API --> Ingest[Ingestion Agent]
+        Ingest --> Classify[NLP Classifier Agent]
+        Classify --> RAG[RAG Agent - Context Retrieval]
+        RAG --> Domain{Domain Dispatcher}
+        
+        subgraph "Specialized Persona Agents"
+            Domain --> Software[Software Extractor]
+            Domain --> Health[Healthcare Extractor]
+            Domain --> Mech[Mechanical Extractor]
+            Domain --> Biz[Business Extractor]
+        end
+        
+        Software & Health & Mech & Biz --> Suggest[FAISS Suggestion Engine]
+        Suggest --> Render[Render Agent]
+    end
+    
+    API <--> FAISS[(FAISS Vector Memory)]
+    API <--> Gemini[[Google Gemini LLM]]
+    
+    Render --> Frontend
+    Render -.-> Learner[Ingest Learner Agent]
+    Learner -.-> FAISS
+```
+
+### Key Agents & Roles:
 1.  **Ingestion Agent**: Collects and pre-processes raw text or uploaded documents (PDF, DOCX, VTT).
 2.  **Classifier Agent**: Uses a trained **NLP Model** to distinguish between functional requirements, non-functional requirements, stakeholders, and "noise."
 3.  **RAG Agent**: Queries a 200,000+ vector knowledge base (Enron/AMI corpus) for domain context.
