@@ -1731,5 +1731,537 @@
       "finance",
       "compliance"
     ]
+  },
+  {
+    "id": "b5f51818-3568-4cb9-a219-74ae4eb5facc",
+    "project_name": "Untitled Project",
+    "domain": "business",
+    "industry": "",
+    "requirements": [
+      "Establish Berlin and Paris operational hubs",
+      "Achieve 15% market share"
+    ],
+    "nfrs": [
+      "Regulatory resilience (MiFID II/GDPR)",
+      "Currency risk mitigation"
+    ],
+    "domain_sections": {
+      "Market Entry Strategy": [
+        {
+          "title": "Dual-Hub Continental Expansion",
+          "description": "Phased market entry leveraging Berlin and Paris as primary operational and regulatory beachheads to capture the DACH and Francophone fintech markets.",
+          "priority": "Strategic",
+          "mitigation": "Establish local legal entities and leadership teams to navigate regional business nuances."
+        }
+      ],
+      "Business Objectives & KPIs": [
+        {
+          "title": "Market Share Acquisition",
+          "description": "Capture 15% of the EU fintech market share by the end of fiscal year 2025.",
+          "priority": "Strategic",
+          "mitigation": "Aggressive marketing spend and localized product-market fit adjustments."
+        }
+      ],
+      "ROI & Financial Projections": [
+        {
+          "title": "Capital Efficiency & Yield",
+          "description": "Targeting a 22% Return on Investment (ROI) within an 18-month liquidity or performance window.",
+          "priority": "Strategic",
+          "mitigation": "Rigorous OpEx monitoring and unit economic optimization."
+        }
+      ],
+      "Strategic Risk & Mitigation": [
+        {
+          "title": "Currency & Macroeconomic Volatility",
+          "description": "Exposure to Euro-volatility impacting cross-border capital flows and valuation.",
+          "priority": "Strategic",
+          "mitigation": "Implementation of sophisticated currency hedging strategies and forward contracts."
+        }
+      ],
+      "Market Drivers & Competition": [
+        {
+          "title": "EU Fintech Disruption",
+          "description": "Capitalizing on the shift toward digital banking and decentralized finance within the Eurozone.",
+          "priority": "Strategic",
+          "mitigation": "Continuous competitive intelligence monitoring of incumbent banks and neo-bank rivals."
+        }
+      ],
+      "Operational Requirements": [
+        {
+          "title": "Hub Infrastructure Development",
+          "description": "Physical and digital infrastructure setup in Berlin and Paris to support localized operations.",
+          "priority": "Operational",
+          "mitigation": "Scalable cloud-based business solutions to ensure cross-border operational continuity."
+        }
+      ],
+      "Regulatory & Compliance": [
+        {
+          "title": "Regulatory Framework Alignment",
+          "description": "Full adherence to MiFID II (Markets in Financial Instruments Directive) and GDPR (General Data Protection Regulation).",
+          "priority": "Compliance",
+          "mitigation": "Appointment of a Data Protection Officer (DPO) and regular compliance audits."
+        }
+      ],
+      "Strategic Roadmap": [
+        {
+          "title": "18-Month Execution Horizon",
+          "description": "Sequential rollout from hub establishment to full market penetration by 2025.",
+          "priority": "Strategic",
+          "mitigation": "Quarterly milestone reviews and agile strategic pivots based on market feedback."
+        }
+      ],
+      "Predictive Suggestions (FAISS RAG)": [
+        {
+          "title": "Suggestion (pattern_database)",
+          "description": "The dashboard must compare actual ROI against initial financial projections on a quarterly basis.",
+          "priority": "Potential",
+          "id": "P-005"
+        },
+        {
+          "title": "Suggestion (ERP Rollout)",
+          "description": "The ERP system must integrate finance, procurement, and inventory.",
+          "priority": "Potential",
+          "id": "biz_002"
+        },
+        {
+          "title": "Suggestion (ERP Rollout)",
+          "description": "Automatic journal entry creation for every AP/AR transaction.",
+          "priority": "Potential",
+          "id": "biz_002"
+        },
+        {
+          "title": "Suggestion (ERP Rollout)",
+          "description": "Production planning module must consider machine and labor capacity.",
+          "priority": "Potential",
+          "id": "biz_002"
+        },
+        {
+          "title": "Suggestion (ERP Rollout)",
+          "description": "Inventory levels across all 5 warehouses must stay synced in real-time.",
+          "priority": "Potential",
+          "id": "biz_002"
+        },
+        {
+          "title": "Suggestion (ERP Rollout)",
+          "description": "The procurement module shall automate RFQ and PO processing.",
+          "priority": "Potential",
+          "id": "biz_002"
+        },
+        {
+          "title": "Suggestion (ERP Rollout)",
+          "description": "Financial consolidation for three subsidiaries must be automated.",
+          "priority": "Potential",
+          "id": "biz_002"
+        },
+        {
+          "title": "Suggestion (ERP Rollout)",
+          "description": "The system shall facilitate SOX compliance for audit tracking.",
+          "priority": "Potential",
+          "id": "biz_002"
+        },
+        {
+          "title": "Suggestion (ERP Rollout)",
+          "description": "Cost accounting must support standard, average, and FIFO methods.",
+          "priority": "Potential",
+          "id": "biz_002"
+        },
+        {
+          "title": "Suggestion (ERP Rollout)",
+          "description": "Strategic vendor management module shall track performance and quality.",
+          "priority": "Potential",
+          "id": "biz_002"
+        }
+      ]
+    },
+    "compliance": [
+      "MiFID II & GDPR"
+    ],
+    "tags": [
+      "business"
+    ]
+  },
+  {
+    "id": "eb8b2707-30ef-4ef9-9410-20ceec12fac8",
+    "project_name": "Untitled Project",
+    "domain": "software",
+    "industry": "",
+    "requirements": [
+      "We are planning to build a next-generation financial analytics dashboard for enterprise users that will allow organizations to monitor and manage their financial data in real time.",
+      "The system must support secure user authentication using Single Sign-On (SSO) with providers like Google and Microsoft, ensuring a seamless login experience.",
+      "Once logged in, users should be able to access a customizable dashboard displaying key financial metrics, trends, and insights.",
+      "The platform should also allow users to export reports in formats such as PDF and Excel, as well as schedule automated email reports for stakeholders.",
+      "Additionally, an admin panel will be required so that administrators can manage user roles, permissions, and access levels efficiently.",
+      "The current scope of the project includes dashboard analytics, user authentication, and the reporting module, while features such as a mobile application and additional third-party integrations beyond Stripe are considered out of scope for the initial release.",
+      "However, there are some gaps that need to be addressed, such as the absence of a defined audit logging mechanism and a lack of clarity around disaster recovery and backup strategies, which could impact system reliability in failure scenarios."
+    ],
+    "nfrs": [
+      "From a performance and reliability standpoint, the API must respond within 200 milliseconds at P99 latency, and the system should maintain at least 99.9% uptime to ensure business continuity.",
+      "All sensitive data must be encrypted using AES-256 standards, and the system should be capable of scaling to handle up to 100,000 concurrent users without performance degradation.",
+      "The user interface should be responsive and load within 2 seconds on standard broadband connections to ensure a smooth user experience."
+    ],
+    "domain_sections": {
+      "Predictive Suggestions (FAISS RAG)": [
+        {
+          "title": "Suggestion (pattern_database)",
+          "description": "The system must support Multi-Factor Authentication (MFA) for administrative access.",
+          "priority": "Potential",
+          "id": "P-001"
+        },
+        {
+          "title": "Suggestion (pattern_database)",
+          "description": "The platform shall support automated invoice generation after every successful transaction.",
+          "priority": "Potential",
+          "id": "P-002"
+        },
+        {
+          "title": "Suggestion (HR Management System)",
+          "description": "Employees must be able to view and download their monthly payslips.",
+          "priority": "Potential",
+          "id": "soft_002"
+        },
+        {
+          "title": "Suggestion (HR Management System)",
+          "description": "The system shall allow managers to approve leave requests with one click.",
+          "priority": "Potential",
+          "id": "soft_002"
+        },
+        {
+          "title": "Suggestion (HR Management System)",
+          "description": "The payroll module must calculate taxes automatically based on country rules.",
+          "priority": "Potential",
+          "id": "soft_002"
+        },
+        {
+          "title": "Suggestion (HR Management System)",
+          "description": "Performance appraisals shall be scheduled annually and tracked by HR.",
+          "priority": "Potential",
+          "id": "soft_002"
+        },
+        {
+          "title": "Suggestion (HR Management System)",
+          "description": "The org chart must be dynamically generated from data in the employee database.",
+          "priority": "Potential",
+          "id": "soft_002"
+        },
+        {
+          "title": "Suggestion (HR Management System)",
+          "description": "Automatic notifications shall be sent for upcoming contract renewals.",
+          "priority": "Potential",
+          "id": "soft_002"
+        },
+        {
+          "title": "Suggestion (HR Management System)",
+          "description": "Multi-level approval workflows must be configurable for expenses.",
+          "priority": "Potential",
+          "id": "soft_002"
+        },
+        {
+          "title": "Suggestion (HR Management System)",
+          "description": "Onboarding checklists for new hires must include document upload features.",
+          "priority": "Potential",
+          "id": "soft_002"
+        }
+      ]
+    },
+    "compliance": [],
+    "tags": [
+      "software"
+    ]
+  },
+  {
+    "id": "45e27c57-fd67-4031-9fc2-384442210865",
+    "project_name": "Untitled Project",
+    "domain": "healthcare",
+    "industry": "",
+    "requirements": [
+      "Patient drug-allergy alerts must trigger in <200ms",
+      "Support HL7 FHIR for EHR interoperability"
+    ],
+    "nfrs": [
+      "All data must be encrypted with AES-256",
+      "Alert latency <200ms"
+    ],
+    "domain_sections": {
+      "Clinical Requirements": [
+        {
+          "title": "Bi-directional EHR Access",
+          "description": "Provision of a secure gateway for patients and clinicians to access longitudinal Electronic Health Records (EHR).",
+          "priority": "Mission-Critical",
+          "mitigation": "Implement robust identity and access management (IAM) to prevent unauthorized PHI disclosure."
+        }
+      ],
+      "Patient Safety & Risk Mitigation": [
+        {
+          "title": "Real-time Contraindication Alerting",
+          "description": "Automated drug-allergy interaction checks triggered during the clinical workflow.",
+          "priority": "Life-Critical",
+          "mitigation": "Hard-coded latency thresholds and fail-safe local caching of allergy profiles to ensure availability during network degradation."
+        }
+      ],
+      "Care Workflow & EHR Integration": [
+        {
+          "title": "FHIR-based Interoperability Layer",
+          "description": "Utilization of HL7 FHIR resources (Patient, AllergyIntolerance, Observation) for seamless data exchange between the portal and the core EMR.",
+          "priority": "Mission-Critical",
+          "mitigation": "API rate limiting and schema validation to prevent EMR resource exhaustion."
+        }
+      ],
+      "Data Privacy (PHI / HIPAA / GDPR)": [
+        {
+          "title": "At-Rest and In-Transit Encryption",
+          "description": "Mandatory AES-256 encryption for all Protected Health Information (PHI) to meet HIPAA Security Rule requirements.",
+          "priority": "Life-Critical",
+          "mitigation": "Regular cryptographic key rotation and FIPS 140-2 validated modules."
+        }
+      ],
+      "Compliance & FDA Regulatory": [
+        {
+          "title": "HIPAA/HITECH Regulatory Alignment",
+          "description": "Ensuring the platform meets all administrative, physical, and technical safeguards for healthcare data.",
+          "priority": "Life-Critical",
+          "mitigation": "Comprehensive audit logging and automated breach notification protocols."
+        }
+      ],
+      "Clinical Decision Support (CDS)": [
+        {
+          "title": "Low-Latency Safety Logic",
+          "description": "CDS hooks or integrated logic to process drug-allergy alerts in <200ms at the point of care.",
+          "priority": "Life-Critical",
+          "mitigation": "Edge computing or optimized secure PHI repository indexing for allergy cross-referencing."
+        }
+      ],
+      "Stakeholders (Care Teams/IT)": [
+        {
+          "title": "Multidisciplinary Governance",
+          "description": "Engagement of Clinical Staff (SMEs), IT Security (CISO), and Hospital Administration (CMO/COO).",
+          "priority": "Mission-Critical",
+          "mitigation": "Establishment of a Clinical Advisory Board to oversee safety-critical UI/UX changes."
+        }
+      ],
+      "Implementation Roadmap": [
+        {
+          "title": "Phased Clinical Rollout",
+          "description": "Phase 1: FHIR Integration; Phase 2: CDS Safety Logic Validation; Phase 3: Patient Portal Go-Live.",
+          "priority": "Mission-Critical",
+          "mitigation": "Shadow-mode testing of drug-allergy alerts prior to clinical activation."
+        }
+      ],
+      "Predictive Suggestions (FAISS RAG)": [
+        {
+          "title": "Suggestion (pattern_database)",
+          "description": "The system must maintain an immutable audit trail for every access to Protected Health Information (PHI).",
+          "priority": "Potential",
+          "id": "P-003"
+        },
+        {
+          "title": "Suggestion (ICU Monitoring System)",
+          "description": "The system shall display real-time vitals for all ICU patients in one view.",
+          "priority": "Potential",
+          "id": "health_003"
+        },
+        {
+          "title": "Suggestion (ICU Monitoring System)",
+          "description": "Audible alerts must trigger for critical heart rate and O2 fluctuations.",
+          "priority": "Potential",
+          "id": "health_003"
+        },
+        {
+          "title": "Suggestion (ICU Monitoring System)",
+          "description": "Nurse workflow dashboard must prioritize task lists by patient severity.",
+          "priority": "Potential",
+          "id": "health_003"
+        },
+        {
+          "title": "Suggestion (ICU Monitoring System)",
+          "description": "Device integration shall support monitors, ventilators, and infusion pumps.",
+          "priority": "Potential",
+          "id": "health_003"
+        },
+        {
+          "title": "Suggestion (ICU Monitoring System)",
+          "description": "The system must maintain a full audit trail of all clinical actions.",
+          "priority": "Potential",
+          "id": "health_003"
+        },
+        {
+          "title": "Suggestion (ICU Monitoring System)",
+          "description": "Shift handover reports shall be generated automatically from the system.",
+          "priority": "Potential",
+          "id": "health_003"
+        },
+        {
+          "title": "Suggestion (ICU Monitoring System)",
+          "description": "Trend analysis must highlight deteriorating patient conditions over 24h.",
+          "priority": "Potential",
+          "id": "health_003"
+        },
+        {
+          "title": "Suggestion (ICU Monitoring System)",
+          "description": "The interface must support touch-screen interaction for sterile environments.",
+          "priority": "Potential",
+          "id": "health_003"
+        },
+        {
+          "title": "Suggestion (ICU Monitoring System)",
+          "description": "Early Warning Scores (EWS) must be calculated and shown prominently.",
+          "priority": "Potential",
+          "id": "health_003"
+        }
+      ]
+    },
+    "compliance": [
+      "HIPAA / HL7 FHIR"
+    ],
+    "tags": [
+      "healthcare"
+    ]
+  },
+  {
+    "id": "37f7162e-9b43-4490-a22d-e599b14dd2dc",
+    "project_name": "Untitled Project",
+    "domain": "mechanical",
+    "industry": "",
+    "requirements": [
+      "Contain 450 PSI internal pressure",
+      "Operate at 80\u00b0C without deformation"
+    ],
+    "nfrs": [
+      "Safety Factor >= 2.5",
+      "+/- 0.05mm Tolerance"
+    ],
+    "domain_sections": {
+      "Mechanical Design Specifications": [
+        {
+          "title": "Industrial Refrigeration Casing",
+          "description": "Structural housing designed for high-pressure containment in industrial HVAC cycles.",
+          "priority": "Yield Strength",
+          "mitigation": "Finite Element Analysis (FEA) to verify stress distribution under 450 PSI load."
+        }
+      ],
+      "Material Properties & Stress Analysis": [
+        {
+          "title": "6061-T6 Aluminum Alloy",
+          "description": "Selection of aerospace-grade tempered aluminum to ensure high strength-to-weight ratio and corrosion resistance.",
+          "priority": "Yield Strength",
+          "mitigation": "Verify T6 temper certification to prevent premature yielding under thermal expansion at 80\u00b0C."
+        }
+      ],
+      "Manufacturing & Assembly (DFM/DFA)": [
+        {
+          "title": "Precision Milling Operations",
+          "description": "Subtractive manufacturing process required for all critical mount points to ensure planar alignment.",
+          "priority": "Yield Strength",
+          "mitigation": "Tool path optimization to minimize residual stress concentrations during material removal."
+        }
+      ],
+      "Tolerances & Precision Metrics": [
+        {
+          "title": "Mount Point Dimensional Control",
+          "description": "Linear tolerance of +/- 0.05mm maintained across all mechanical coupling/linkage surfaces.",
+          "priority": "Yield Strength",
+          "mitigation": "CMM (Coordinate Measuring Machine) validation post-machining to ensure assembly fitment."
+        }
+      ],
+      "Safety Factors & Structural Integrity": [
+        {
+          "title": "Design Margin design parameter",
+          "description": "Minimum Safety Factor (SF) of 2.5 against material yield strength.",
+          "priority": "Safety Factor",
+          "mitigation": "Hydrostatic burst testing at 1125 PSI (2.5x operating) to validate structural integrity."
+        }
+      ],
+      "Environmental Operating Conditions": [
+        {
+          "title": "High-Pressure Thermal Load",
+          "description": "Continuous operation at 450 PSI internal pressure with a thermal ceiling of 80\u00b0C.",
+          "priority": "Safety Factor",
+          "mitigation": "Thermal stress analysis to account for derating of aluminum yield strength at elevated temperatures."
+        }
+      ],
+      "BOM (Bill of Materials) Constraints": [
+        {
+          "title": "Raw Material Sourcing",
+          "description": "design parameter for certified 6061-T6 billet stock.",
+          "priority": "Yield Strength",
+          "mitigation": "Material Test Reports (MTR) required for every batch to confirm chemical composition."
+        }
+      ],
+      "Project Timeline & Prototyping": [
+        {
+          "title": "Rev 4.0 Iteration",
+          "description": "Current revision focus on finalizing housing geometry for production tooling.",
+          "priority": "Safety Factor",
+          "mitigation": "Pilot run inspection to verify repeatability of +/- 0.05mm tolerances."
+        }
+      ],
+      "Predictive Suggestions (FAISS RAG)": [
+        {
+          "title": "Suggestion (pattern_database)",
+          "description": "The system must support Multi-Factor Authentication (MFA) for administrative access.",
+          "priority": "Potential",
+          "id": "P-001"
+        },
+        {
+          "title": "Suggestion (pattern_database)",
+          "description": "Design must factor in a 1.5x minimum yield strength safety coefficient for all structural components.",
+          "priority": "Potential",
+          "id": "P-004"
+        },
+        {
+          "title": "Suggestion (HVAC Compressor Unit)",
+          "description": "The compressor must be a scroll-type for quiet commercial operation.",
+          "priority": "Potential",
+          "id": "mech_003"
+        },
+        {
+          "title": "Suggestion (HVAC Compressor Unit)",
+          "description": "Vibration isolators shall reduce noise transmission to less than 65dB.",
+          "priority": "Potential",
+          "id": "mech_003"
+        },
+        {
+          "title": "Suggestion (HVAC Compressor Unit)",
+          "description": "Thermal overload protection must be built-in with automatic reset.",
+          "priority": "Potential",
+          "id": "mech_003"
+        },
+        {
+          "title": "Suggestion (HVAC Compressor Unit)",
+          "description": "Compressor must be compatible with R-410A and R-32 refrigerants.",
+          "priority": "Potential",
+          "id": "mech_003"
+        },
+        {
+          "title": "Suggestion (HVAC Compressor Unit)",
+          "description": "Liquid-injection cooling shall be used for high-ambient operations.",
+          "priority": "Potential",
+          "id": "mech_003"
+        },
+        {
+          "title": "Suggestion (HVAC Compressor Unit)",
+          "description": "The unit shall include an integrated sight glass for oil level check.",
+          "priority": "Potential",
+          "id": "mech_003"
+        },
+        {
+          "title": "Suggestion (HVAC Compressor Unit)",
+          "description": "Connection ports must be brazed copper for leak-free sealing.",
+          "priority": "Potential",
+          "id": "mech_003"
+        },
+        {
+          "title": "Suggestion (HVAC Compressor Unit)",
+          "description": "Compressor motor shall be variable-speed for energy efficiency.",
+          "priority": "Potential",
+          "id": "mech_003"
+        }
+      ]
+    },
+    "compliance": [
+      "ASME BPVC Section VIII / ASTM B209"
+    ],
+    "tags": [
+      "mechanical"
+    ]
   }
 ]

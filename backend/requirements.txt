@@ -1,45 +1,43 @@
-# Core dependencies
-fastapi>=0.111.0
-uvicorn>=0.30.0
-python-dotenv>=1.0.1
-pydantic>=2.7.4
-sse-starlette>=2.1.0
-python-multipart>=0.0.1
-requests
-aiohttp
-typing-extensions
-pyyaml
-
-# AI & Pipeline
-langgraph>=0.2.60
-langchain>=0.3.18
-langchain-community>=0.3.17
-langchain-google-genai>=2.0.5
-langchain-mcp-adapters>=0.0.4
-google-generativeai>=0.8.3
-
-# Data & Knowledge Base
+datasets
+transformers
+nltk
+tqdm
 numpy
 faiss-cpu
 sentence-transformers
 scikit-learn
 joblib
 torch
-pandas>=2.0.0
-nltk
-tqdm
-
-# Document Processing
-pdfplumber>=0.11.0
-python-docx>=1.1.2
-pypdf2>=3.0.1
-openpyxl>=3.1.2
-reportlab>=4.2.0
-
-# Utils & Testing
-pytest>=8.0.0
-pytest-asyncio>=0.23.0
-rapidfuzz
 spacy
-datasets
-transformers
+requests
+aiohttp
+typing-extensions
+pyyaml
+fastapi==0.111.0
+uvicorn==0.30.0
+python-dotenv==1.0.1
+langgraph==0.2.60
+langchain==0.3.18
+langchain-google-genai==2.0.5
+langchain-mcp-adapters==0.0.4
+google-generativeai==0.8.3
+langchain-community==0.3.17
+pandas==2.2.2
+openpyxl==3.1.2
+pypdf2==3.0.1
+python-docx==1.1.2
+pdfplumber==0.11.0
+sse-starlette==2.1.0
+pydantic==2.7.2
+httpx==0.27.0
+pytest==8.2.1
+pytest-asyncio==0.23.6
+rapidfuzz==3.9.3
+python-multipart==0.0.9
+
+# Document parsing (optional - install for full functionality)
+pdfplumber==0.11.0
+python-docx==1.1.0
+
+# Export functionality (optional - install for full functionality)
+reportlab==4.2.0
